@@ -2,4 +2,4 @@
 
 42Paris, March 2022.
 
-Get started with C++.
+Get started with Object Oriented Programming.
