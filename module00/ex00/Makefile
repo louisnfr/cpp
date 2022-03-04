@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/04 19:32:32 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/04 19:34:53 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,5 +43,11 @@ test: $(NAME)
 	./$< "shhhhh... I think the students are asleep..."
 	./$< Damnit " ! " "Sorry students, I thought this thing was off."
 	./$<
+
+push:
+	git add .
+	git commit -m "cpp (make push)"
+	git status
+	git push
 
 .PHONY: all clean fclean re test
