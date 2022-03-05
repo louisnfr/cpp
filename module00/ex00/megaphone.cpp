@@ -6,28 +6,23 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 02:02:40 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/03 02:21:04 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/05 18:57:28 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <algorithm>
 #include <iostream>
-#include <string>
 
 int	main(int ac, char **av)
 {
-	int	i;
-
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	i = 0;
-	while (++i < ac)
+	for (int i = 1; av[i]; i++)
 	{
 		std::string str = av[i];
-		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+		std::transform(str.begin(), str.end(), str.begin(), toupper);
 		std::cout << str;
-		std::cout << " ";
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 	return (0);
 }
