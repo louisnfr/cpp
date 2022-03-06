@@ -13,7 +13,7 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# define VAR 74
+# define VAR 15
 
 class Contact {
 	public:

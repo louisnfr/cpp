@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/07 00:40:25 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/07 00:45:28 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 S = src
 I = inc
 B = .build
-O = $(addprefix $(B)/,$(SRC:.cpp=.o))
-D = $(addprefix $(B)/,$(SRC:.cpp=.d))
+O = $(SRC:%.cpp=$(B)/%.o)
+D = $(SRC:%.cpp=$(B)/%.d)
 
 all: $(NAME)
 
