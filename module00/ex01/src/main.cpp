@@ -16,6 +16,6 @@
 
 int	main(void)
 {
-	std::cout << VAR << std::endl;
+	
 	return (0);
 }
