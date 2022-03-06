@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 15:24:00 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/06 15:24:00 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/06 16:19:07 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/06 16:19:07 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include <iostream>
+#include "PhoneBook.hpp"
 
-# include <iostream>
+PhoneBook::PhoneBook(void)
+{
+	std::cout << "constructor called" << std::endl;
+	return ;
+}
 
-#endif
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "destructor called" << std::endl;
+	return ;
+}

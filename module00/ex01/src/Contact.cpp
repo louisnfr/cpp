@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 15:21:02 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/06 15:21:02 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/06 15:59:19 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/06 15:59:19 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include "Contact.hpp"
-# include "PhoneBook.hpp"
+#include <iostream>
+#include "Contact.hpp"
 
-int	main(void)
+Contact::Contact(void)
 {
-	PhoneBook phone;
+	std::cout << "constructor called" << std::endl;
+	return ;
+}
 
-	// phone.contact[0].id = 12;
-	std::cout << phone.contact[0].id << std::endl;
-	return (0);
+Contact::~Contact(void)
+{
+	std::cout << "destructor called" << std::endl;
+	return ;
 }

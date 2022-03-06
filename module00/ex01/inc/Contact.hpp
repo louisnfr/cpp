@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 15:21:02 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/06 15:21:02 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/06 16:11:26 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/06 16:11:26 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include "Contact.hpp"
-# include "PhoneBook.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-int	main(void)
-{
-	PhoneBook phone;
+class Contact {
+	public:
+		int	id;
+		Contact(void);
+		~Contact(void);
+};
 
-	// phone.contact[0].id = 12;
-	std::cout << phone.contact[0].id << std::endl;
-	return (0);
-}
+#endif
