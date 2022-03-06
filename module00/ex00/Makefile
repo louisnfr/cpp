@@ -46,8 +46,8 @@ test: $(NAME)
 
 push:
 	@git add .
-	@git commit -m "cpp (make push)"
 	@git status
+	@git commit -m "cpp (make push)"
 	@git push
 
 .PHONY: all clean fclean re test
