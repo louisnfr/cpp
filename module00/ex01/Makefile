@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/06 16:19:20 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/07 00:40:25 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,13 @@ SRC =				\
 	PhoneBook.cpp	\
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 S = src
 I = inc
 B = .build
-D = $(SRC:%.cpp=$(B)/%.d)
-O = $(D:.d=.o)
-
--include $(D)
-vpath %.cpp $(S)
+O = $(addprefix $(B)/,$(SRC:.cpp=.o))
+D = $(addprefix $(B)/,$(SRC:.cpp=.d))
 
 all: $(NAME)
 
@@ -38,9 +35,11 @@ $(NAME): $(O)
 $(B):
 	@mkdir $@
 
-$(B)/%.o: %.cpp | $(B)
+-include $(D)
+
+$(B)/%.o: $(S)/%.cpp | $(B)
 	@echo "$(COMPILE)$(NOC) $*.cpp"
-	@$(CXX) $(CXXFLAGS) $(I:%=-I %) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -MMD -MP $(I:%=-I %) -c $< -o $@
 
 clean:
 	@echo "$(INFO) deleting $(B)"

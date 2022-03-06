@@ -13,6 +13,8 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# define VAR 74
+
 class Contact {
 	public:
 		int	id;

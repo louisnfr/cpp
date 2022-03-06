@@ -16,9 +16,6 @@
 
 int	main(void)
 {
-	PhoneBook phone;
-
-	// phone.contact[0].id = 12;
-	std::cout << phone.contact[0].id << std::endl;
+	std::cout << VAR << std::endl;
 	return (0);
 }
