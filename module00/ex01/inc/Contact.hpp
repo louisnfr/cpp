@@ -15,9 +15,14 @@
 
 class Contact {
 	public:
-		int	id;
 		Contact(void);
 		~Contact(void);
+	// private:
+		std::string firstname;
+		std::string lastname;
+		std::string nickname;
+		std::string number;
+		std::string secret;
 };
 
 #endif

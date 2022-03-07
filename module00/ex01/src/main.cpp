@@ -16,6 +16,15 @@
 
 int	main(void)
 {
-	
+	PhoneBook phonebook;
+	std::string choice;
+
+	while (true)
+	{
+		std::cout << "My Awesome PhoneBook" << std::endl;
+		std::cin >> choice;
+		if (choice == "EXIT")
+			break ;
+	}
 	return (0);
 }

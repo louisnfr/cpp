@@ -15,12 +15,10 @@
 
 PhoneBook::PhoneBook(void)
 {
-	std::cout << "constructor called" << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "destructor called" << std::endl;
 	return ;
 }

@@ -15,12 +15,10 @@
 
 Contact::Contact(void)
 {
-	std::cout << "constructor called" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "destructor called" << std::endl;
 	return ;
 }
