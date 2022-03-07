@@ -27,15 +27,15 @@ Contact::~Contact(void)
 void	Contact::fill_contact(void)
 {
 	std::cout << "> First name: ";
-	std::cin >> this->firstname;
+	std::cin >> this->_firstname;
 	std::cout << "> Last name: ";
-	std::cin >> this->lastname;
+	std::cin >> this->_lastname;
 	std::cout << "> Nickname: ";
-	std::cin >> this->nickname;
+	std::cin >> this->_nickname;
 	std::cout << "> Number: ";
-	std::cin >> this->number;
+	std::cin >> this->_number;
 	std::cout << "> Secret: ";
-	std::cin >> this->secret;
+	std::cin >> this->_secret;
 }
 
 void	Contact::print_string(std::string str)
@@ -48,17 +48,17 @@ void	Contact::print_string(std::string str)
 
 void	Contact::display_names(void)
 {
-	print_string(this->firstname);
-	print_string(this->lastname);
-	print_string(this->nickname);
+	print_string(this->_firstname);
+	print_string(this->_lastname);
+	print_string(this->_nickname);
 	std::cout << std::endl;
 }
 
 void	Contact::display_contact(void)
 {
-	std::cout << "> First name: " << this->firstname << std::endl;
-	std::cout << "> Last name: " << this->lastname << std::endl;
-	std::cout << "> Nickname: " << this->nickname << std::endl;
-	std::cout << "> Number: " << this->number << std::endl;
-	std::cout << "> Secret: " << this->secret << std::endl;
+	std::cout << "> First name: " << this->_firstname << std::endl;
+	std::cout << "> Last name: " << this->_lastname << std::endl;
+	std::cout << "> Nickname: " << this->_nickname << std::endl;
+	std::cout << "> Number: " << this->_number << std::endl;
+	std::cout << "> Secret: " << this->_secret << std::endl;
 }

@@ -22,12 +22,12 @@ class Contact {
 		void	display_names(void);
 		void	display_contact(void);
 	private:
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string number;
-		std::string secret;
-		
+		std::string _firstname;
+		std::string _lastname;
+		std::string _nickname;
+		std::string _number;
+		std::string _secret;
+
 		void	print_string(std::string str);
 };
 
