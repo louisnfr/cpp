@@ -16,20 +16,37 @@
 
 std::string	prompt(void)
 {
-	std::string choice;
+	std::string	input;
 
 	std::cout << "*************************" << std::endl;
 	std::cout << "*   Awesome PhoneBook   *" << std::endl;
 	std::cout << "*   ADD, SEARCH, EXIT   *" << std::endl;
 	std::cout << "*************************" << std::endl;
-	std::cin >> choice;
-	return (choice);
+	std::cin >> input;
+	return (input);
+}
+
+void	search_contacts(PhoneBook phonebook)
+{
+	std::string	input;
+
+	phonebook.display_contacts();
+	while (true)
+	{
+		std::cout << "Enter an index: ";
+		std::cin >> input;
+		if (input >= "1" && input <= "8")
+		{
+			phonebook.contact[std::stoi(input) - 1].display_contact();
+			break ;
+		}
+	}
 }
 
 int	main(void)
 {
 	PhoneBook	phonebook;
-	std::string	choice;
+	std::string	input;
 	int			i;
 
 	i = 0;
@@ -37,16 +54,16 @@ int	main(void)
 	{
 		if (i == 8)
 			i = 0;
-		choice = prompt();
-		if (choice == "ADD")
-			phonebook.contact[i].
-		else if (choice == "SEARCH")
+		input = prompt();
+		if (input == "ADD")
+		{
+			phonebook.contact[i].fill_contact();
+			i++;
+		}
+		else if (input == "SEARCH")
+			search_contacts(phonebook);
+		else if (input == "EXIT" || std::cin.eof())
 			break ;
-		else if (choice == "EXIT")
-			break ;
-		else
-			std::cout << "Wrong input, try again" << std::endl;
-		i++;
 	}
 	return (0);
 }

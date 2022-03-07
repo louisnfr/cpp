@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
@@ -21,4 +22,13 @@ PhoneBook::PhoneBook(void)
 PhoneBook::~PhoneBook(void)
 {
 	return ;
+}
+
+void	PhoneBook::display_contacts(void)
+{
+	for (int i = 0; i < 8; i++)
+	{
+		std::cout << "|" << std::setw(10) << i + 1 << "|";
+		this->contact[i].display_names();
+	}
 }

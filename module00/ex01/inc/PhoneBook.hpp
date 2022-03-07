@@ -19,7 +19,9 @@ class PhoneBook {
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
+
 		Contact contact[8];
+		void	display_contacts(void);
 };
 
 #endif
