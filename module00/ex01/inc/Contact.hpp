@@ -17,12 +17,13 @@ class Contact {
 	public:
 		Contact(void);
 		~Contact(void);
-	// private:
+	private:
 		std::string firstname;
 		std::string lastname;
 		std::string nickname;
 		std::string number;
 		std::string secret;
+		void	fill_contact(void);
 };
 
 #endif

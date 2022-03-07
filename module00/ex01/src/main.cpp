@@ -14,17 +14,39 @@
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
 
-int	main(void)
+std::string	prompt(void)
 {
-	PhoneBook phonebook;
 	std::string choice;
 
+	std::cout << "*************************" << std::endl;
+	std::cout << "*   Awesome PhoneBook   *" << std::endl;
+	std::cout << "*   ADD, SEARCH, EXIT   *" << std::endl;
+	std::cout << "*************************" << std::endl;
+	std::cin >> choice;
+	return (choice);
+}
+
+int	main(void)
+{
+	PhoneBook	phonebook;
+	std::string	choice;
+	int			i;
+
+	i = 0;
 	while (true)
 	{
-		std::cout << "My Awesome PhoneBook" << std::endl;
-		std::cin >> choice;
-		if (choice == "EXIT")
+		if (i == 8)
+			i = 0;
+		choice = prompt();
+		if (choice == "ADD")
+			phonebook.contact[i].
+		else if (choice == "SEARCH")
 			break ;
+		else if (choice == "EXIT")
+			break ;
+		else
+			std::cout << "Wrong input, try again" << std::endl;
+		i++;
 	}
 	return (0);
 }

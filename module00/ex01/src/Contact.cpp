@@ -22,3 +22,10 @@ Contact::~Contact(void)
 {
 	return ;
 }
+
+void	Contact::fill_contact(void)
+{
+	std::string	input;
+	
+	return ;
+}
