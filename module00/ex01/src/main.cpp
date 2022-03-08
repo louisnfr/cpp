@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include "Contact.hpp"
-# include "PhoneBook.hpp"
+#include <iostream>
+#include <limits>
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-std::string	prompt(void)
+static std::string	prompt(void)
 {
 	std::string	input;
 
@@ -28,16 +29,23 @@ std::string	prompt(void)
 
 void	search_contacts(PhoneBook phonebook)
 {
-	std::string	input;
+	int	input;
 
 	phonebook.display_contacts();
 	while (true)
 	{
 		std::cout << "Enter an index: ";
 		std::cin >> input;
-		if (input >= "1" && input <= "8")
+		if (std::cin.fail() == true)
 		{
-			phonebook.contact[std::stoi(input) - 1].display_contact();
+			// clear error flag
+			std::cin.clear();
+			// skip to next line
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+		else if (input >= 1 && input <= 8)
+		{
+			phonebook.contact[input - 1].display_contact();
 			break ;
 		}
 	}
