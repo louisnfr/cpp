@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 02:12:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:55 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/09 17:17:20 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 	public:
-		Zombie();
+		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
 		void	announce(void);
