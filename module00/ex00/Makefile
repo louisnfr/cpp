@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/09 15:41:15 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/09 15:56:17 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ else
 endif
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-S = .
+S = src
 I = inc
 B = .build
 O = $(SRC:%.cpp=$(B)/%.o)
