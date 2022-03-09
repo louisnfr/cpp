@@ -6,12 +6,12 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:10:09 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/09 17:19:44 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/09 17:25:52 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WEAPON_H__
-# define __WEAPON_H__
+#ifndef __WEAPON_HPP__
+# define __WEAPON_HPP__
 
 #include <iostream>
 

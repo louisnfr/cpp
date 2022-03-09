@@ -6,12 +6,12 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 02:12:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/09 17:17:20 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/09 17:26:34 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_H__
-# define __ZOMBIE_H__
+#ifndef __ZOMBIE_HPP__
+# define __ZOMBIE_HPP__
 
 # include <iostream>
 

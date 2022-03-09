@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef __PHONEBOOK_HPP__
+# define __PHONEBOOK_HPP__
 
 #include "Contact.hpp"
 
@@ -21,7 +21,7 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		Contact contact[8];
-		
+
 		void	display_contacts(void);
 };
 
