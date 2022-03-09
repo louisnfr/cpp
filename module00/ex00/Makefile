@@ -6,13 +6,18 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/04 19:35:12 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/09 02:01:04 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CXX = c++
+OS = $(shell uname -s)
+ifeq ($(OS),Darwin)
+	CXX = c++-11
+else
+	CXX = c++
+endif
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 S = megaphone.cpp

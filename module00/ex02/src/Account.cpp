@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 00:09:51 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/08 19:07:35 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/09 02:04:52 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,6 @@ int	Account::_nbAccounts;
 int	Account::_totalAmount;
 int	Account::_totalNbDeposits;
 int	Account::_totalNbWithdrawals;
-
-int	Account::getNbAccounts()
-{
-	return (Account::_nbAccounts);
-}
-
-int	Account::getTotalAmount()
-{
-	return (Account::_totalAmount);
-}
-
-int	Account::getNbDeposits()
-{
-	return (Account::_totalNbDeposits);
-}
-
-int	Account::getNbWithdrawals()
-{
-	return (Account::_totalNbWithdrawals);
-}
 
 Account::Account(int initial_deposit)
 {
@@ -64,19 +44,38 @@ Account::~Account(void)
 
 void	Account::makeDeposit(int deposit)
 {
-	std::cout << "makeDeposit" << std::endl;
-	(void)deposit;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex;
+	std::cout << ";p_amount:" << this->_amount;
+	std::cout << ";deposit:" << deposit;
+	this->_amount += deposit;
+	this->_nbDeposits++;
+	_totalNbDeposits++;
+	_totalAmount += deposit;
+	std::cout << ";amount:" << this->_amount;
+	std::cout << ";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
-	std::cout << "makeWithdrawal" << std::endl;
-	(void)withdrawal;
-	return (false);
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex;
+	std::cout << ";p_amount:" << this->_amount;
+	std::cout << ";withdrawal:";
+	if (this->_amount < withdrawal)
+	{
+		std::cout << "refused" << std::endl;
+		return (false);
+	}
+	std::cout << withdrawal;
+	this->_amount -= withdrawal;
+	this->_nbWithdrawals++;
+	_totalNbWithdrawals++;
+	_totalAmount -= withdrawal;
+	std::cout << ";amount:" << this->_amount;
+	std::cout << ";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
+	return (true);
 }
-
-// consts tutorial
-// https://elearning.intra.42.fr/notions/piscine-c-d00-c-basics/subnotions/piscine-c-d00-c-basics-const/videos/const-c0f10448-8fd3-4a06-83ed-abcce68c18a1
 
 int		Account::checkAmount(void) const
 {
