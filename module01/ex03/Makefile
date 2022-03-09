@@ -6,17 +6,17 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/09 01:58:33 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/09 17:14:33 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = violence
 
 SRC =				\
 	main.cpp		\
-	Zombie.cpp		\
-	newZombie.cpp	\
-	randomChump.cpp	\
+	Weapon.cpp		\
+	HumanA.cpp		\
+	HumanB.cpp		\
 
 OS = $(shell uname -s)
 ifeq ($(OS),Darwin)
