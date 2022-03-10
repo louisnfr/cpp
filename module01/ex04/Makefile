@@ -6,17 +6,17 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/09 18:46:39 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/10 16:33:14 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = sed
 
-SRC =				\
-	main.cpp		\
+SRC =			\
+	main.cpp	\
 
-OS = $(shell uname -s)
-ifeq ($(OS),Darwin)
+HOST = $(shell hostname)
+ifeq ($(HOST),louisraffin)
 	CXX = c++-11
 else
 	CXX = c++
