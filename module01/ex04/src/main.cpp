@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:47:41 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/10 23:26:28 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/11 00:37:26 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ static void	exit_error(std::string error_message, std::string option)
 
 static std::string	replace_line(std::string line, std::string s1, std::string s2)
 {
-	(void)s1;
-	(void)s2;
-	(void)line;
-	return (line);
+	std::string	new_line;
+	std::size_t	pos;
+
+	pos = line.find(s1);
+	new_line = line.substr(0, pos) + s2
+			+ line.substr(pos + s1.length(), line.length());
+	return (new_line);
 }
 
 static void	search_file(std::ifstream &infile, std::ofstream &outfile,
@@ -36,9 +39,6 @@ static void	search_file(std::ifstream &infile, std::ofstream &outfile,
 {
 	std::string	line;
 
-	(void)outfile;
-	(void)s1;
-	(void)s2;
 	if (s1.empty())
 		exit_error("s1 is empty", "");
 	while (!infile.eof())
@@ -46,10 +46,9 @@ static void	search_file(std::ifstream &infile, std::ofstream &outfile,
 		std::getline(infile, line);
 		if (line.empty())
 			break ;
-		if (line.find(s1) != std::string::npos)
+		while (line.find(s1) != std::string::npos)
 			line = replace_line(line, s1, s2);
-		else
-			outfile << line << std::endl;
+		outfile << line << std::endl;
 	}
 }
 
@@ -59,7 +58,6 @@ int	main(int ac, char **av)
 	std::ofstream	outfile;
 	std::string		replace;
 
-	// errors check
 	if (ac != 4)
 		exit_error("bad arguments", "");
 	infile.open(av[1]);
@@ -69,8 +67,6 @@ int	main(int ac, char **av)
 	outfile.open(replace.c_str());
 	if (outfile.fail())
 		exit_error("failed to open file", (std::string)av[1]);
-
-	// search s1 occurences
 	search_file(infile, outfile, av[2], av[3]);
 	infile.close();
 	outfile.close();

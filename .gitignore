@@ -38,4 +38,4 @@
 */.vscode
 */*/.vscode
 */*/.build
-
+*/*/*.replace
