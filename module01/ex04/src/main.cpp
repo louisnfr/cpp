@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:47:41 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/11 00:37:26 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:11:06 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,18 @@ static void	exit_error(std::string error_message, std::string option)
 	exit (EXIT_FAILURE);
 }
 
-static std::string	replace_line(std::string line, std::string s1, std::string s2)
+static void	replace_line(std::string *line, std::string s1, std::string s2)
 {
-	std::string	new_line;
 	std::size_t	pos;
+	std::size_t	i;
 
-	pos = line.find(s1);
-	new_line = line.substr(0, pos) + s2
-			+ line.substr(pos + s1.length(), line.length());
-	return (new_line);
+	i = 0;
+	while ((pos = line->find(s1, i)) != std::string::npos)
+	{
+		line->erase(pos, s1.length());
+		line->insert(pos, s2);
+		i = pos + s2.length();
+	}
 }
 
 static void	search_file(std::ifstream &infile, std::ofstream &outfile,
@@ -46,8 +49,8 @@ static void	search_file(std::ifstream &infile, std::ofstream &outfile,
 		std::getline(infile, line);
 		if (line.empty())
 			break ;
-		while (line.find(s1) != std::string::npos)
-			line = replace_line(line, s1, s2);
+		if (line.find(s1) != std::string::npos)
+			replace_line(&line, s1, s2);
 		outfile << line << std::endl;
 	}
 }
