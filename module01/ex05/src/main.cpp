@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 02:12:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/11 18:36:18 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/11 18:03:18 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/11 18:38:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
+#include "Karen.hpp"
 
-# include <iostream>
-
-class Zombie
+int	main(void)
 {
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
-		void announce(void);
-	private:
-		std::string _name;
-};
+	Karen		karen;
+	std::string	input;
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+	std::cout << "enter:";
+	std::cin >> input;
+	karen.complain(input);
+}
