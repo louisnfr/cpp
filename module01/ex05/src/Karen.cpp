@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:06:10 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/11 18:41:36 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/12 23:59:22 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	Karen::complain(std::string level)
 										&Karen::warning, &Karen::error};
 
 	i = 0;
-	if (i < 4)
+	while (i < 4)
 	{
 		if (level == str[i])
 			(this->*func[i])();
+		i++;
 	}
 }
