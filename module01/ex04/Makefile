@@ -21,7 +21,8 @@ ifeq ($(HOST),macbook)
 else
 	CXX = c++
 endif
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #$(DEBUG)
+DEBUG = -g3 -fsanitize=address
 
 S = src
 I = inc
