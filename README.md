@@ -17,7 +17,7 @@ Folder initializer for CPP exercises
 
 ### Usage
 
-`blueprint` or `bp` to launch the script.
+`blueprint` or `bp` to start the script.
 
 ### Edit and add Templates
 
