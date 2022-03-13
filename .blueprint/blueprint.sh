@@ -1,14 +1,24 @@
 #!/bin/bash
 
-TEMPLATES=$HOME/.blueprint/templates/
+TEMPLATES="$HOME/.blueprint/templates/"
 
-echo enter the folder name
-read folder
+echo "how many folders?"
+read i
 
-mkdir $folder
-mkdir $folder/inc $folder/src
+while [ $i -gt 0 ]
+do
+	echo "folder number?"
+	read number
 
-cp $TEMPLATES/Makefile $folder
-cp $TEMPLATES/main.cpp $folder/src
-cp $TEMPLATES/ClassName.cpp $folder/src
-cp $TEMPLATES/ClassName.hpp $folder/inc
+	FOLDER="ex$number"
+
+	mkdir $FOLDER
+	mkdir $FOLDER/inc $FOLDER/src
+
+	cp $TEMPLATES/Makefile $FOLDER
+	cp $TEMPLATES/main.cpp $FOLDER/src
+	cp $TEMPLATES/ClassName.cpp $FOLDER/src
+	cp $TEMPLATES/ClassName.hpp $FOLDER/inc
+
+	((i--))
+done
