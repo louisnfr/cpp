@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ExecutableName
+NAME = executable
 
 SRC =				\
 	main.cpp		\
-	ClassName.cpp	\
+	Class.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

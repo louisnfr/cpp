@@ -17,8 +17,8 @@ do
 
 	cp $TEMPLATES/Makefile $FOLDER
 	cp $TEMPLATES/main.cpp $FOLDER/src
-	cp $TEMPLATES/ClassName.cpp $FOLDER/src
-	cp $TEMPLATES/ClassName.hpp $FOLDER/inc
+	cp $TEMPLATES/Class.cpp $FOLDER/src
+	cp $TEMPLATES/Class.hpp $FOLDER/inc
 
 	((i--))
 done

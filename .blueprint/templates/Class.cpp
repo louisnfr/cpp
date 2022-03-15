@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassName.cpp                                      :+:      :+:    :+:   */
+/*   Class.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClassName.hpp"
+#include "Class.hpp"
 
-ClassName::ClassName(void)
+Class::Class(void) : _var(0)
 {
 	return ;
 }
 
-ClassName::~ClassName(void)
+Class::Class(Class const &src)
+{
+	*this = src;
+	return ;
+}
+
+Class::~Class(void)
 {
 	return ;
 }
+
+int	Class::getVar(void) const
+{
+	return (this->_var);
+}
+
+Class	&Class::operator=(Class const &rhs)
+{
+	this->_var = rhs.getVar();
+	return (*this);
+}
+
