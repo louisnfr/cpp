@@ -8,18 +8,22 @@ Get started with Object Oriented Programming.
 
 Folder initializer for CPP exercises
 
+ZSH required
+
 ![blueprint (1)](https://user-images.githubusercontent.com/57815912/158041795-75f8f44b-9e6c-4c6d-b9ce-f1c696a8ce75.gif)
 
 ### Setup
 
-1. `git clone git@github.com:louisnfr/cpp.git && cd cpp/.blueprint`
-2. `./setup.sh`
+```zsh
+git clone git@github.com:louisnfr/cpp.git && cd cpp/.blueprint
+./setup.sh
+```
 
 ### Usage
 
 `blueprint` or `bp` to start the script.
 
-### Edit and add Templates
+### Edit / Add Templates
 
 If you want to edit the templates, go to `cpp/.blueprint/templates`.
 
