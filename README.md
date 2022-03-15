@@ -4,9 +4,7 @@
 
 Get started with Object Oriented Programming.
 
-## Blueprint script
-
-### Folder initializer for CPP exercises
+## Folder initializer
 
 ![blueprint (1)](https://user-images.githubusercontent.com/57815912/158041795-75f8f44b-9e6c-4c6d-b9ce-f1c696a8ce75.gif)
 
