@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 01:54:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/13 01:57:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/15 18:04:48 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __CLASSNAME_HPP__
-# define __CLASSNAME_HPP__
+#ifndef __FIXED_HPP__
+# define __FIXED_HPP__
 
 # include <iostream>
 
-class ClassName
+class Fixed
 {
 	public:
-		ClassName(void);
-		~ClassName(void);
+		Fixed(void);
+		Fixed(Fixed const &src);
+		~Fixed(void);
+
+		Fixed	&operator=(Fixed const &rhs);
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+
+	private:
+		static int const	_binary_point = 8;
+		int					_raw_bits;
 };
 
 #endif
