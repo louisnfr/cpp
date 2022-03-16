@@ -12,6 +12,8 @@ Get started with Object Oriented Programming.
 
 ⚠️ [Oh My Zsh](https://ohmyz.sh/) required
 
+⚠️ [GNU sed](https://formulae.brew.sh/formula/gnu-sed) required (for macOS)
+
 ```zsh
 git clone git@github.com:louisnfr/cpp.git && cd cpp/.blueprint
 ./setup.sh
