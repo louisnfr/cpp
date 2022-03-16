@@ -3,10 +3,53 @@
 TEMPLATES="$HOME/.blueprint/templates/"
 UNAME=$(uname)
 
+if [ "$UNAME" == "Darwin" ]
+then
+	SED="gsed"
+elif [ "$UNAME" == "Linux" ]
+then
+	SED="sed"
+fi
+
+create_folder () {
+	echo "folder number?"
+	read number
+
+	folder="ex$number"
+	mkdir $folder
+	mkdir $folder/inc $folder/src
+
+	cp $TEMPLATES/Makefile $folder
+	cp $TEMPLATES/main.cpp $folder/src
+}
+
+create_class () {
+	echo "class name?"
+	read name
+
+	up_name=$(echo $name | tr a-z A-Z)
+	if [ -n $1 ]
+	then
+		folder=$1
+	else
+		folder="."
+	fi
+
+	cp $TEMPLATES/Class.cpp $folder/src/$name.cpp
+	cp $TEMPLATES/Class.hpp $folder/inc/$name.hpp
+
+	$($SED -i "s/Class/$name/g" $folder/src/$name.cpp)
+	$($SED -i "s/Class/$name/g" $folder/inc/$name.hpp)
+	$($SED -i "s/CLASS/$up_name/g" $folder/inc/$name.hpp)
+	$($SED -i '16i\ \t'"$name"'.cpp\t\t\\' $folder/Makefile)
+}
+
 echo "what do you want to do?"
 echo "1. create a folder"
 echo "2. add a class to the project"
 read choice
+
+folder=""
 
 if [ "$choice" == "1" ]
 then
@@ -14,42 +57,13 @@ then
 	read i
 	while [ $i -gt 0 ]
 	do
-		echo "folder number?"
-		read number
-
-		FOLDER="ex$number"
-		mkdir $FOLDER
-		mkdir $FOLDER/inc $FOLDER/src
-
-		cp $TEMPLATES/Makefile $FOLDER
-		cp $TEMPLATES/main.cpp $FOLDER/src
-		cp $TEMPLATES/Class.cpp $FOLDER/src
-		cp $TEMPLATES/Class.hpp $FOLDER/inc
+		create_folder
+		create_class $folder
 		((i--))
 	done
 elif [ "$choice" == "2" ]
 then
-	echo "class name?"
-	read name
-
-	cp $TEMPLATES/Class.cpp src/$name.cpp
-	cp $TEMPLATES/Class.hpp inc/$name.hpp
-
-	if [ "$UNAME" == "Darwin" ]
-	then
-		$(gsed -i "s/Class/${name}/g" src/$name.cpp)
-		$(gsed -i "s/Class/${name}/g" inc/$name.hpp)
-		upper_name=$(echo $name | tr a-z A-Z)
-		$(gsed -i "s/CLASS/${upper_name}/g" inc/$name.hpp)
-		$(gsed -i '16i\ \t'"$name"'.cpp\t\t\\' Makefile)
-	elif [ "$UNAME" == "Linux" ]
-	then
-		$(sed -i "s/Class/${name}/g" src/$name.cpp)
-		$(sed -i "s/Class/${name}/g" inc/$name.hpp)
-		upper_name=$(echo $name | tr a-z A-Z)
-		$(sed -i "s/CLASS/${upper_name}/g" inc/$name.hpp)
-		$(sed -i '16i\ \t$'"$name"'.cpp\t\t\\' Makefile)
-	fi
+	create_class "."
 else
 	echo "wrong input"
 fi
