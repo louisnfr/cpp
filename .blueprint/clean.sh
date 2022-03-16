@@ -4,7 +4,7 @@ UNAME=$(uname)
 
 if [ "$UNAME" == "Darwin" ]
 then
-	$(sed -i '' '/blueprint/d' $HOME/.zshrc)
+	$(gsed -i '/blueprint/d' $HOME/.zshrc)
 	$(rm -rf $HOME/.blueprint)
 	echo "blueprint uninstalled"
 elif [ "$UNAME" == "Linux" ]

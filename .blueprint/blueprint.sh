@@ -37,17 +37,18 @@ then
 
 	if [ "$UNAME" == "Darwin" ]
 	then
-		$(sed -i "" "s/Class/${name}/g" src/$name.cpp)
-		$(sed -i "" "s/Class/${name}/g" inc/$name.hpp)
+		$(gsed -i "s/Class/${name}/g" src/$name.cpp)
+		$(gsed -i "s/Class/${name}/g" inc/$name.hpp)
 		upper_name=$(echo $name | tr a-z A-Z)
-		$(sed -i "" "s/CLASS/${upper_name}/g" inc/$name.hpp)
-
+		$(gsed -i "s/CLASS/${upper_name}/g" inc/$name.hpp)
+		$(gsed -i '16i\ \t'"$name"'.cpp\t\t\\' Makefile)
 	elif [ "$UNAME" == "Linux" ]
 	then
 		$(sed -i "s/Class/${name}/g" src/$name.cpp)
 		$(sed -i "s/Class/${name}/g" inc/$name.hpp)
 		upper_name=$(echo $name | tr a-z A-Z)
 		$(sed -i "s/CLASS/${upper_name}/g" inc/$name.hpp)
+		$(sed -i '16i\ \t$'"$name"'.cpp\t\t\\' Makefile)
 	fi
 else
 	echo "wrong input"
