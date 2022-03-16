@@ -6,7 +6,7 @@ Get started with Object Oriented Programming.
 
 ## Folder initializer
 
-![blueprint (1)](https://user-images.githubusercontent.com/57815912/158041795-75f8f44b-9e6c-4c6d-b9ce-f1c696a8ce75.gif)
+![Screen Recording 2022-03-16 at 03 47 21](https://user-images.githubusercontent.com/57815912/158506968-4d0afe32-52ac-4166-8110-35dfbc33cadf.gif)
 
 ### Setup
 
