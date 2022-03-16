@@ -6,36 +6,47 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 01:58:20 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/13 01:59:02 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/16 22:18:27 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point(void) : _var(0)
+Point::Point(void) : _x(Fixed(0)), _y(Fixed(0))
 {
-	return ;
 }
 
-Point::Point(Point const &src)
+Point::Point(float const x, float const y) : _x(Fixed(x)), _y(Fixed(y))
 {
-	*this = src;
-	return ;
+}
+
+Point::Point(Point const &copy) : _x(copy.getX()), _y(copy.getY())
+{
 }
 
 Point::~Point(void)
 {
-	return ;
 }
 
-int	Point::getVar(void) const
+Fixed	Point::getX(void) const
 {
-	return (this->_var);
+	return (this->_x);
+}
+
+Fixed	Point::getY(void) const
+{
+	return (this->_y);
 }
 
 Point	&Point::operator=(Point const &rhs)
 {
-	this->_var = rhs.getVar();
+	// can't modify a const value (Fixed const _x)
+	(void)rhs;
 	return (*this);
 }
 
+std::ostream	&operator<<(std::ostream &o, Point const &rhs)
+{
+	o << "(" << rhs.getX() << ", " << rhs.getY() << ")";
+	return (o);
+}
