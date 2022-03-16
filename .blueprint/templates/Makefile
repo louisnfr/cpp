@@ -14,7 +14,7 @@ NAME = executable
 
 SRC =				\
 	main.cpp		\
-	Class.cpp	\
+	Class.cpp		\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)
