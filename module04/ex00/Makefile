@@ -13,6 +13,8 @@
 NAME = polymorph
 
 SRC =				\
+ 	Cat.cpp		\
+ 	Dog.cpp		\
 	main.cpp		\
  	Animal.cpp		\
 
