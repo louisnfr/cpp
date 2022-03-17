@@ -13,7 +13,7 @@
 NAME = ScavTrap
 
 SRC =				\
- 	FlagTrap.cpp		\
+ 	FragTrap.cpp		\
 	main.cpp		\
  	ClapTrap.cpp	\
  	ScavTrap.cpp	\
