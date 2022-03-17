@@ -6,27 +6,28 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:43 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 18:13:06 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:41:12 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	scav("Hercule");
+	FragTrap	frag("Hercule");
 
 	std::cout << std::endl;
 
-	scav.attack("innocent man");
-	scav.takeDamage(99);
-	scav.beRepaired(150);
+	frag.attack("innocent man");
+	frag.takeDamage(99);
+	frag.repair(150);
 	std::cout << std::endl;
-	scav.guardGate();
+	frag.highFivesGuys();
 	std::cout << std::endl;
-	scav.takeDamage(789);
-	scav.beRepaired(150);
+	frag.takeDamage(789);
+	frag.repair(150);
 	std::cout << std::endl;
 	return (0);
 }

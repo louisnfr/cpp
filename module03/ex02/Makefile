@@ -6,17 +6,17 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/17 02:53:39 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/17 18:38:27 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 
 SRC =				\
- 	FragTrap.cpp		\
 	main.cpp		\
  	ClapTrap.cpp	\
  	ScavTrap.cpp	\
+ 	FragTrap.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

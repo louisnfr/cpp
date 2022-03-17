@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 18:21:54 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:34:48 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 			<< _hit << " hit points." << std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount)
+void	ClapTrap::repair(unsigned int amount)
 {
 	if (_energy == 0 || _hit == 0)
 	{
