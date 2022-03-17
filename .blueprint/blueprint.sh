@@ -38,6 +38,7 @@ create_class () {
 	cp $TEMPLATES/Class.cpp $folder/src/$name.cpp
 	cp $TEMPLATES/Class.hpp $folder/inc/$name.hpp
 
+	$($SED -i "s/Class/$name/g" $folder/src/main.cpp)
 	$($SED -i "s/Class/$name/g" $folder/src/$name.cpp)
 	$($SED -i "s/Class/$name/g" $folder/inc/$name.hpp)
 	$($SED -i "s/CLASS/$up_name/g" $folder/inc/$name.hpp)
