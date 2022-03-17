@@ -17,4 +17,6 @@ class Class
 		int	_var;
 };
 
+std::ostream	&operator<<(std::ostream &o, Class const &i);
+
 #endif

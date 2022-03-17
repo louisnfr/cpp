@@ -23,3 +23,9 @@ int	Class::getVar(void) const
 {
 	return (this->_var);
 }
+
+std::ostream	&operator<<(std::ostream &cout, Class const &i)
+{
+	cout << i.getVar();
+	return (cout);
+}
