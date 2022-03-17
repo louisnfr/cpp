@@ -6,13 +6,13 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 18:34:48 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 20:22:01 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Default"), _hit(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap(void) : _name("default"), _hit(10), _energy(10), _attack(0)
 {
 	std::cout << "[\033[32mCLAP\033[0m] ";
 	std::cout << _name << " is born." << std::endl;
