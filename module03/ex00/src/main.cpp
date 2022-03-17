@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:43 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 04:11:14 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:20:29 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	guy.takeDamage(9);
-	guy.beRepaired(9);
+	guy.beRepaired(UINTMAX);
 	for (int i = 10; i; i--)
 		guy.attack("nobody");
 
