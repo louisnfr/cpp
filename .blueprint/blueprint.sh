@@ -24,21 +24,30 @@ create_folder () {
 }
 
 create_class () {
+	if [ -z $1 ] && ([ ! -e "Makefile" ] || [ ! -d "src" ] || [ ! -d "inc" ])
+	then
+		echo "you're not in the right folder"
+		exit
+	fi
+
 	echo "class name?"
 	read name
-
 	up_name=$(echo $name | tr a-z A-Z)
-	if [ -n $1 ]
+
+	if [ -z $1 ]
 	then
-		folder=$1
-	else
 		folder="."
+	else
+		folder=$1
 	fi
 
 	cp $TEMPLATES/Class.cpp $folder/src/$name.cpp
 	cp $TEMPLATES/Class.hpp $folder/inc/$name.hpp
 
-	$($SED -i "s/Class/$name/g" $folder/src/main.cpp)
+	if [ ! -z $1 ]
+	then
+		$($SED -i "s/Class/$name/g" $folder/src/main.cpp)
+	fi
 	$($SED -i "s/Class/$name/g" $folder/src/$name.cpp)
 	$($SED -i "s/Class/$name/g" $folder/inc/$name.hpp)
 	$($SED -i "s/CLASS/$up_name/g" $folder/inc/$name.hpp)
@@ -64,7 +73,7 @@ then
 	done
 elif [ "$choice" == "2" ]
 then
-	create_class "."
+	create_class ""
 else
 	echo "wrong input"
 fi
