@@ -13,6 +13,7 @@
 NAME = brainz
 
 SRC =				\
+ 	Cat.cpp		\
 	main.cpp		\
 	Zombie.cpp		\
 	newZombie.cpp	\
