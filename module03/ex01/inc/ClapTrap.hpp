@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:51 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 17:01:23 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:22:00 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __CLAPTRAP_HPP__
 
 # include <iostream>
+# define UINTMAX 4294967295
 
 class ClapTrap
 {

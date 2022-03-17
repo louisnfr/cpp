@@ -6,12 +6,11 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 02:53:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 17:56:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:21:54 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#define UINTMAX 4294967295
 
 ClapTrap::ClapTrap(void) : _name("Default"), _hit(10), _energy(10), _attack(0)
 {
