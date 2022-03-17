@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:51:18 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 20:23:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 22:46:52 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ScavTrap::attack(std::string const &target)
 void	ScavTrap::guardGate(void)
 {
 	std::cout << "[\033[33mSCAV\033[0m] ";
-	std::cout << _name << " entered Gate Keeper mode." << std::endl;
+	std::cout << _name << " entered gate keeper mode." << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, ScavTrap const &i)
