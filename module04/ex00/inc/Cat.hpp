@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/17 23:49:28 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/18 00:41:21 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __CAT_HPP__
 # define __CAT_HPP__
 
-# include <iostream>
+# include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
 	public:
 		Cat(void);
@@ -11,10 +23,7 @@ class Cat
 		Cat &operator=(Cat const &rhs);
 		~Cat(void);
 
-		int	getVar(void) const;
-
-	private:
-		int	_var;
+		virtual void	makeSound(void) const;
 };
 
 std::ostream	&operator<<(std::ostream &o, Cat const &i);

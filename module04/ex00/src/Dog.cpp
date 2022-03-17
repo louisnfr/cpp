@@ -1,31 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/17 23:49:36 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/18 00:40:44 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
-Dog::Dog(void) : _var(0)
+Dog::Dog(void) : Animal()
 {
+	this->_type = "dog";
+	std::cout << _type << " constructor" << std::endl;
 }
 
-Dog::Dog(Dog const &src)
+Dog::Dog(Dog const &src) : Animal(src)
 {
 	*this = src;
 }
 
 Dog	&Dog::operator=(Dog const &rhs)
 {
-	this->_var = rhs.getVar();
+	this->_type = rhs.getType();
 	return (*this);
 }
 
 Dog::~Dog(void)
 {
+	std::cout << _type << " destructor" << std::endl;
 }
 
-int	Dog::getVar(void) const
+void	Dog::makeSound(void) const
 {
-	return (this->_var);
+	std::cout << _type << " barks" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, Dog const &i)
 {
-	cout << i.getVar();
+	cout << i.getType();
 	return (cout);
 }
