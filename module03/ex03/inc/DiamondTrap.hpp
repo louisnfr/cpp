@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:51:13 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 20:30:15 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/17 22:32:41 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap &operator=(DiamondTrap const &rhs);
 		~DiamondTrap(void);
 
+		void	attack(std::string const &target);
+		void	whoAmI(void);
 	private:
 		std::string const	_name;
 };
