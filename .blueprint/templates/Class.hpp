@@ -8,9 +8,8 @@ class Class
 	public:
 		Class(void);
 		Class(Class const &src);
+		Class &operator=(Class const &rhs);
 		~Class(void);
-
-		Class	&operator=(Class const &rhs);
 
 		int	getVar(void) const;
 
