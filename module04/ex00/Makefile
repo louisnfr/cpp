@@ -6,19 +6,19 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/18 00:44:43 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/18 01:22:19 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = polymorph
 
 SRC =				\
- 	WrongCat.cpp	\
- 	WrongAnimal.cpp	\
 	main.cpp		\
  	Animal.cpp		\
  	Cat.cpp			\
  	Dog.cpp			\
+ 	WrongAnimal.cpp	\
+ 	WrongCat.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

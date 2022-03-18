@@ -6,21 +6,22 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 00:37:03 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/18 01:20:12 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal()
+Cat::Cat(void)
 {
 	this->_type = "cat";
 	std::cout << _type << " constructor" << std::endl;
 }
 
-Cat::Cat(Cat const &src) : Animal(src)
+Cat::Cat(Cat const &src)
 {
 	*this = src;
+	std::cout << _type << " copy constructor" << std::endl;
 }
 
 Cat	&Cat::operator=(Cat const &rhs)

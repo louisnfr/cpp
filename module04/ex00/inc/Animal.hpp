@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:40 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 00:41:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/18 01:18:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Animal
 		Animal(void);
 		Animal(Animal const &src);
 		Animal &operator=(Animal const &rhs);
-		~Animal(void);
+		virtual ~Animal(void);
 
 		std::string		getType(void) const;
 		virtual void	makeSound(void) const;
