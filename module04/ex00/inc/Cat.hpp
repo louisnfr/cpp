@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:28 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:18:20 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/18 01:38:19 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cat : public Animal
 		Cat(void);
 		Cat(Cat const &src);
 		Cat &operator=(Cat const &rhs);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		virtual void	makeSound(void) const;
 };

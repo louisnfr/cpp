@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:31 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:18:10 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/18 01:38:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 		Dog(void);
 		Dog(Dog const &src);
 		Dog &operator=(Dog const &rhs);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		virtual void	makeSound(void) const;
 };

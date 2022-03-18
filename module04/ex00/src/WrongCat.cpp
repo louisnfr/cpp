@@ -6,22 +6,22 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:46:51 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:12:06 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/18 01:48:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void)
+WrongCat::WrongCat(void) : WrongAnimal()
 {
 	this->_type = "wrong cat";
-	std::cout << _type << " constructor" << std::endl;
+	std::cout << "constructor wrong cat" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src)
+WrongCat::WrongCat(WrongCat const &src) : WrongAnimal()
 {
 	*this = src;
-	std::cout << _type << " copy constructor" << std::endl;
+	std::cout << "copy constructor wrong cat" << std::endl;
 }
 
 WrongCat	&WrongCat::operator=(WrongCat const &rhs)
@@ -32,12 +32,12 @@ WrongCat	&WrongCat::operator=(WrongCat const &rhs)
 
 WrongCat::~WrongCat(void)
 {
-	std::cout << _type << " destructor" << std::endl;
+	std::cout << "destructor wrong cat" << std::endl;
 }
 
 void	WrongCat::makeSound(void) const
 {
-	std::cout << _type << " yells" << std::endl;
+	std::cout << "wrong cat yells" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, WrongCat const &i)
