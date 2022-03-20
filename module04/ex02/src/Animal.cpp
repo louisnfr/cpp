@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:37 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 22:56:46 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ Animal::~Animal(void)
 std::string	Animal::getType(void) const
 {
 	return (this->_type);
-}
-
-void	Animal::makeSound(void) const
-{
-	std::cout << "animal ?" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, Animal const &i)

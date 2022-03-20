@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 20:55:52 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 22:56:29 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	prompt(std::string structor, std::string animal)
 
 int	main(void)
 {
+	// Animal	error;
+
+	// ex01
+
 	Animal	*animals[4];
 
 	for (int i = 0; i < 4; i++)
