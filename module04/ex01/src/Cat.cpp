@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 19:23:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Cat::Cat(Cat const &src) : Animal()
 Cat	&Cat::operator=(Cat const &rhs)
 {
 	this->_type = rhs.getType();
+	this->_brain = new Brain(*(rhs._brain));
 	return (*this);
 }
 

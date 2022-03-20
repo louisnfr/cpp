@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 01:54:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 19:19:10 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ Brain::Brain(Brain const &src)
 
 Brain	&Brain::operator=(Brain const &rhs)
 {
-	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = rhs._ideas[i];
+	if (this != &rhs)
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = rhs._ideas[i];
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 18:32:28 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 19:34:38 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,14 @@ void	prompt(std::string structor, std::string animal)
 
 int	main(void)
 {
-	Dog	basic;
-	Dog	tmp = basic;
+	Dog	original;
+	Dog	copy = original;
 
+	std::cout << std::endl;
+
+	Dog	*p1 = new Dog;
+	Dog	*p2 = new Dog(*p1);
+	delete p1;
+	delete p2;
 	return (0);
 }
