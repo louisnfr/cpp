@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 17:55:09 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog(Dog const &src) : Animal()
 {
-	std::cout << "copy ";
+	std::cout << "(copy)";
 	prompt(CONSTRUCTOR, DOG);
 	*this = src;
 }

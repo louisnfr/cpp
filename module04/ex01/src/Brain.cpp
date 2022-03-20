@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 01:54:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 17:52:59 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain(void)
 
 Brain::Brain(Brain const &src)
 {
-	std::cout << "copy ";
+	std::cout << "(copy)";
 	prompt(CONSTRUCTOR, BRAIN);
 	*this = src;
 }

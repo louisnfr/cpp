@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 17:54:57 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 18:32:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat(void) : Animal()
 
 Cat::Cat(Cat const &src) : Animal()
 {
-	std::cout << "copy ";
+	std::cout << "(copy)";
 	prompt(CONSTRUCTOR, CAT);
 	*this = src;
 }
