@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:40 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:18:24 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:48:50 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __ANIMAL_HPP__
 
 # include <iostream>
+# include "defines.hpp"
 
 class Animal
 {
@@ -31,5 +32,6 @@ class Animal
 };
 
 std::ostream	&operator<<(std::ostream &o, Animal const &i);
+void			prompt(std::string structor, std::string animal);
 
 #endif

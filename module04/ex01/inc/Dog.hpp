@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:49:31 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:38:24 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:31:11 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __DOG_HPP__
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -22,8 +23,9 @@ class Dog : public Animal
 		Dog(Dog const &src);
 		Dog &operator=(Dog const &rhs);
 		virtual ~Dog(void);
-
 		virtual void	makeSound(void) const;
+	private:
+		Brain	*_brain;
 };
 
 std::ostream	&operator<<(std::ostream &o, Dog const &i);

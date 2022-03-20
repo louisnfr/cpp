@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:37 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:49:21 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:51:58 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 Animal::Animal(void)
 {
 	this->_type = "animal";
-	std::cout << "constructor animal" << std::endl;
+	prompt(CONSTRUCTOR, ANIMAL);
 }
 
 Animal::Animal(Animal const &src)
 {
 	*this = src;
-	std::cout << "copy constructor animal" << std::endl;
+	std::cout << "copy ";
+	prompt(CONSTRUCTOR, ANIMAL);
 }
 
 Animal	&Animal::operator=(Animal const &rhs)
@@ -32,7 +33,7 @@ Animal	&Animal::operator=(Animal const &rhs)
 
 Animal::~Animal(void)
 {
-	std::cout << "destructor animal" << std::endl;
+	prompt(DESTRUCTOR, ANIMAL);
 }
 
 std::string	Animal::getType(void) const

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   defines.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 23:16:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/20 17:44:31 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/20 17:47:57 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/20 17:51:03 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef __DEFINES_HPP__
+# define __DEFINES_HPP__
 
-void	prompt(std::string structor, std::string animal)
-{
-	std::cout << structor << " " << animal << std::endl;
-}
+# define CONSTRUCTOR "\033[32mconstructor\033[0m"
+# define DESTRUCTOR "\033[31mdestructor\033[0m"
 
-int	main(void)
-{
-	Animal *doggo = new Dog;
+# define ANIMAL "\033[36manimal\033[0m"
+# define DOG "\033[33mdog\033[0m"
+# define CAT "\033[34mcat\033[0m"
+# define BRAIN "\033[35mbrain\033[0m"
 
-	delete doggo;
-	return (0);
-}
+#endif
