@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:44:59 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 04:09:41 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 20:52:03 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,14 @@ Character::Character(Character const &src)
 
 Character	&Character::operator=(Character const &rhs)
 {
-	this->_name = rhs.getName();
+	this->_name = rhs._name;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (rhs._inventory[i] != NULL)
+			this->_inventory[i] = rhs._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
+	}
 	return (*this);
 }
 
@@ -35,7 +42,10 @@ Character::~Character(void)
 {
 	std::cout << "[DEST] Character" << std::endl;
 	for (size_t i = 0; i < 4; i++)
+	{
 		delete this->_inventory[i];
+		this->_inventory[i] = NULL;
+	}
 }
 
 std::string const	&Character::getName(void) const
@@ -45,24 +55,27 @@ std::string const	&Character::getName(void) const
 
 void	Character::equip(AMateria *m)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < 4)
-		if (this->_inventory != NULL)
-			i++;
-	this->_inventory[i] = m;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] == NULL)
+		{
+			this->_inventory[i] = m;
+			return ;
+		}
+	}
+	std::cout << "* inventory full *" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	(void)idx;
+	if (idx >= 0 && idx < 4)
+		this->_inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter &target)
 {
-	(void)idx;
-	(void)target;
+	if (idx >= 0 && idx < 4 && this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
 }
 
 std::ostream	&operator<<(std::ostream &cout, Character const &i)

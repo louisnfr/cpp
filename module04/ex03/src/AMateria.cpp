@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 01:51:39 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 02:20:37 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 18:21:51 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ std::string const	&AMateria::getType(void) const
 
 void	AMateria::use(ICharacter &target)
 {
-	std::cout << "debug" << std::endl;
-	(void)target;
+	std::cout << "* materia use at " << target.getName() << " *" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, AMateria const &i)

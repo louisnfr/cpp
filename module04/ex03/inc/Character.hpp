@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:45:14 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 03:59:08 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 20:13:36 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Character : public ICharacter
 {
 	public:
-		Character(std::string const &name);
+		Character(std::string const &name = "default");
 		Character(Character const &src);
 		Character &operator=(Character const &rhs);
 		virtual ~Character(void);
