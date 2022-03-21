@@ -63,14 +63,8 @@ folder=""
 
 if [ "$choice" == "1" ]
 then
-	echo "how many folders?"
-	read i
-	while [ $i -gt 0 ]
-	do
-		create_folder
-		create_class $folder
-		((i--))
-	done
+	create_folder
+	create_class $folder
 elif [ "$choice" == "2" ]
 then
 	create_class ""
