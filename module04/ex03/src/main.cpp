@@ -6,13 +6,17 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 01:56:41 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 02:30:51 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 03:43:02 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+// #include "Character.hpp"
+// #include "Ice.hpp"
+// #include "Cure.hpp"
 
 int	main(void)
 {
+	// Character	player("louis");
+
 	return (0);
 }

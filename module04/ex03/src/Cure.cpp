@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:34:39 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 02:47:08 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 03:53:39 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cure::Cure(Cure const &src) : AMateria(src)
 
 Cure	&Cure::operator=(Cure const &rhs)
 {
-	// this->_type = rhs.getType();
+	this->_type = rhs.getType();
 	return (*this);
 }
 

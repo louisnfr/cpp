@@ -6,18 +6,20 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:44:59 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 02:46:51 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 03:02:08 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void) : _name(0)
+Character::Character(std::string const &name) : _name(name)
 {
+	std::cout << "[CONST] Character" << std::endl;
 }
 
 Character::Character(Character const &src)
 {
+	std::cout << "[COPY] Character" << std::endl;
 	*this = src;
 }
 
@@ -29,6 +31,7 @@ Character	&Character::operator=(Character const &rhs)
 
 Character::~Character(void)
 {
+	std::cout << "[DEST] Character" << std::endl;
 }
 
 std::string const	&Character::getName(void) const
