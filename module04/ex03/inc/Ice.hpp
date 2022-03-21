@@ -1,20 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/21 01:56:53 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/21 02:34:16 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __ICE_HPP__
 # define __ICE_HPP__
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		Ice(void);
 		Ice(Ice const &src);
 		Ice &operator=(Ice const &rhs);
-		~Ice(void);
-
-		int	getVar(void) const;
-
-	private:
-		int	_var;
+		virtual ~Ice(void);
+		virtual AMateria	*clone(void) const;
+		virtual void		use(ICharacter &target);
 };
 
 std::ostream	&operator<<(std::ostream &o, Ice const &i);

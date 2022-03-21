@@ -1,31 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/21 01:51:39 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/21 02:20:37 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AMateria.hpp"
 
-AMateria::AMateria(void) : _var(0)
+AMateria::AMateria(std::string const &type) : _type(type)
 {
+	std::cout << "[CONST] AMateria" << std::endl;
 }
 
 AMateria::AMateria(AMateria const &src)
 {
+	std::cout << "[COPY] AMateria" << std::endl;
 	*this = src;
 }
 
 AMateria	&AMateria::operator=(AMateria const &rhs)
 {
-	this->_var = rhs.getVar();
+	this->_type = rhs.getType();
 	return (*this);
 }
 
 AMateria::~AMateria(void)
 {
+	std::cout << "[DEST] AMateria" << std::endl;
 }
 
-int	AMateria::getVar(void) const
+std::string const	&AMateria::getType(void) const
 {
-	return (this->_var);
+	return (this->_type);
+}
+
+void	AMateria::use(ICharacter &target)
+{
+	std::cout << "debug" << std::endl;
+	(void)target;
 }
 
 std::ostream	&operator<<(std::ostream &cout, AMateria const &i)
 {
-	cout << i.getVar();
+	cout << i.getType();
 	return (cout);
 }

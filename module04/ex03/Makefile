@@ -6,21 +6,21 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/21 01:46:17 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/21 02:15:16 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = executable
+NAME = materia
 
-SRC =						\
- 	MateriaSource.cpp		\
- 	IMateriaSource.cpp		\
- 	Character.cpp			\
- 	ICharacter.cpp			\
- 	Cure.cpp				\
- 	Ice.cpp					\
- 	AMateria.cpp			\
-	main.cpp				\
+SRC =					\
+ 	MateriaSource.cpp	\
+ 	IMateriaSource.cpp	\
+ 	Character.cpp		\
+ 	ICharacter.cpp		\
+ 	Cure.cpp			\
+ 	Ice.cpp				\
+ 	AMateria.cpp		\
+	main.cpp			\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

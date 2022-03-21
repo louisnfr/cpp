@@ -1,31 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/21 01:57:50 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/21 02:46:59 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 
-Ice::Ice(void) : _var(0)
+Ice::Ice(void) : AMateria("ice")
 {
+	std::cout << "[CONST] Ice" << std::endl;
 }
 
-Ice::Ice(Ice const &src)
+Ice::Ice(Ice const &src) : AMateria(src)
 {
-	*this = src;
+	std::cout << "[COPY] Ice" << std::endl;
 }
 
 Ice	&Ice::operator=(Ice const &rhs)
 {
-	this->_var = rhs.getVar();
+	// this->_type = rhs.getType();
 	return (*this);
 }
 
 Ice::~Ice(void)
 {
+	std::cout << "[DEST] Ice" << std::endl;
 }
 
-int	Ice::getVar(void) const
+AMateria	*Ice::clone(void) const
 {
-	return (this->_var);
+	AMateria	*tmp = new Ice;
+
+	*tmp = *this;
+	return (tmp);
+}
+
+void	Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &cout, Ice const &i)
 {
-	cout << i.getVar();
+	cout << i.getType();
 	return (cout);
 }
