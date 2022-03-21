@@ -6,14 +6,13 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:40:21 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 03:51:24 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 03:54:46 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __ICHARACTER_HPP__
 # define __ICHARACTER_HPP__
 
-# include <iostream>
 # include "AMateria.hpp"
 
 class AMateria;
