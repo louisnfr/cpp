@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 02:45:14 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/21 03:47:48 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/21 03:59:08 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Character : public ICharacter
 		virtual void	use(int idx, ICharacter &target);
 	private:
 		std::string	_name;
-		AMateria	*inventory[4];
+		AMateria	*_inventory[4];
 };
 
 std::ostream	&operator<<(std::ostream &o, Character const &i);
