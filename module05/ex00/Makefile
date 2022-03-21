@@ -6,14 +6,14 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/13 02:02:46 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/21 22:40:17 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = bureaucrat
 
 SRC =				\
- 	Bureaucrat.cpp		\
+ 	Bureaucrat.cpp	\
 	main.cpp		\
 
 HOST = $(shell hostname)
