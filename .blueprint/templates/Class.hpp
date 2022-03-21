@@ -10,9 +10,7 @@ class Class
 		Class(Class const &src);
 		Class &operator=(Class const &rhs);
 		~Class(void);
-
 		int	getVar(void) const;
-
 	private:
 		int	_var;
 };
