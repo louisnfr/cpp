@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 18:31:47 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 20:50:32 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,12 @@
 
 int	main(void)
 {
-	Bureaucrat	boss("boss", 1);
-	ShrubberyCreationForm	arbre("bouisson");
+	Bureaucrat	crat("crat", 137);
+	ShrubberyCreationForm hey("targeti targeto");
 
-	std::cout << arbre << std::endl;
-
-	boss.signForm(arbre);
-
-	std::cout << arbre << std::endl;
-
-	ShrubberyCreationForm	arbre2(arbre);
-
-	std::cout << arbre2 << std::endl;
+	std::cout << hey << std::endl;
+	crat.signForm(hey);
+	crat.executeForm(hey);
 
 	return (0);
 }

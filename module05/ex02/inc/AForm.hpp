@@ -29,13 +29,20 @@ class AForm
 		bool				getStatus(void) const;
 		unsigned int		getSignGrade(void) const;
 		unsigned int		getExecGrade(void) const;
-		void				beSigned(Bureaucrat const &b);
+		void				beSigned(Bureaucrat const &signer);
+		void				beExecuted(Bureaucrat const &executor) const;
+		virtual void		execute(void) const = 0;
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

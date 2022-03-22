@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:24 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 18:09:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 20:46:44 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,32 @@ unsigned int	Bureaucrat::getGrade(void) const
 	return (this->_grade);
 }
 
-void	Bureaucrat::signForm(AForm &f) const
+void	Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
-		f.beSigned(*this);
-		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 	}
 	catch(std::exception & e)
 	{
 		std::cerr << this->getName() << " couldn't sign ";
-		std::cerr << f.getName() << " because ";
+		std::cerr << form.getName() << " because ";
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.beExecuted(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cerr << this->getName() << " couldn't execute ";
+		std::cerr << form.getName() << " because ";
 		std::cerr << e.what() << std::endl;
 	}
 }

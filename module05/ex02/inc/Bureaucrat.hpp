@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:59 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 18:08:59 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 20:42:57 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ class Bureaucrat
 		unsigned int		getGrade(void) const;
 		void				promote(void);
 		void				demote(void);
-		void				signForm(AForm &f) const;
+		void				signForm(AForm &form) const;
+		void				executeForm(AForm const &form) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:
