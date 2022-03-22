@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:33:01 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 19:46:54 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 21:47:03 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,9 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
+}
+
+void	PresidentialPardonForm::execute(void) const
+{
+	std::cout << this->_target << " was forgiven by Zaphod Beeblebrox" << std::endl;
 }

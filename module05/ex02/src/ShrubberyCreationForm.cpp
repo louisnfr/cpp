@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:14:27 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 21:40:53 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 22:17:13 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void	ShrubberyCreationForm::execute(void) const
 
 char const	*ShrubberyCreationForm::FailedToOpenFileException::what(void) const throw()
 {
-	return ("failed to open file");
+	return ("couldn't open file");
 }

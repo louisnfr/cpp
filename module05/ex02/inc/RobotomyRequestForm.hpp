@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:29:06 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 19:47:19 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 22:05:59 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(RobotomyRequestForm const &src);
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 		~RobotomyRequestForm(void);
+		virtual void	execute(void) const;
+		class FailedToRobotomizeException : public std::exception
+		{
+			public:
+				virtual const char * what() const throw();
+		};
 	private:
 		std::string const	_target;
 };

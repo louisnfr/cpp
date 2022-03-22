@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:32:13 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 19:46:42 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 21:42:25 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(PresidentialPardonForm const &src);
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 		~PresidentialPardonForm(void);
+		virtual void	execute(void) const;
 	private:
 		std::string const	_target;
 };
