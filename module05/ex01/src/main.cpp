@@ -6,73 +6,63 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 01:39:34 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 16:37:49 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
-	Bureaucrat	tommy("Thomas", 1);
-	Bureaucrat	tom(tommy);
-	Bureaucrat	arthur("Arthur", 2);
-	Bureaucrat	john("John", 149);
-
-	std::cout << std::endl;
-
-	std::cout << tommy << std::endl;
-	std::cout << arthur << std::endl;
-	std::cout << john << std::endl;
-
-	std::cout << std::endl;
-
-	arthur.promote();
-	std::cout << arthur << std::endl;
-	john.demote();
-	std::cout << john << std::endl;
-
-	std::cout << std::endl;
-
+	{
 	try
 	{
-		arthur.promote();
+		Form("WPE", 0, 150);
 	}
-	catch (std::exception & e)
+	catch(std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
 	try
 	{
-		john.demote();
+		Form("WPE", 150, 0);
 	}
-	catch (std::exception & e)
+	catch(std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	std::cout << std::endl;
-
 	try
 	{
-		Bureaucrat	polly("Polly", 0);
+		Form("WPE", 151, 150);
 	}
-	catch (std::exception & e)
+	catch(std::exception & e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
 	try
 	{
-		Bureaucrat	linda("Linda", 151);
+		Form("WPE", 150, 151);
 	}
-	catch (std::exception & e)
+	catch(std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-	
+	}
+
+	Bureaucrat	walter("Walter", 1);
+	Form		form("FSP", 1, 12);
+
 	std::cout << std::endl;
+	std::cout << form << std::endl;
+
+	walter.demote();
+	walter.signForm(form);
+	walter.promote();
+	walter.signForm(form);
+
+	std::cout << std::endl;
+	std::cout << form << std::endl;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:59 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 00:22:24 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 16:29:34 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define __BUREAUCRAT_HPP__
 
 # include <iostream>
-# include <exception>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -27,6 +29,7 @@ class Bureaucrat
 		unsigned int		getGrade(void) const;
 		void				promote(void);
 		void				demote(void);
+		void				signForm(Form &f) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

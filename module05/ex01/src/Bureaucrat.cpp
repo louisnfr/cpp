@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:24 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 00:26:40 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 16:33:00 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,15 @@ Bureaucrat::Bureaucrat(std::string const &name, unsigned int grade)
 	: _name(name), _grade(grade)
 {
 	check_grade(this->_grade);
-	std::cout << "constructor" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src)
 {
-	std::cout << "copy constructor" << std::endl;
 	*this = src;
 }
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-	std::cout << "assignation operator" << std::endl;
 	check_grade(rhs._grade);
 	this->_grade = rhs.getGrade();
 	return (*this);
@@ -43,7 +40,6 @@ Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "destructor" << std::endl;
 }
 
 void	Bureaucrat::promote(void)
@@ -66,6 +62,21 @@ std::string const	Bureaucrat::getName(void) const
 unsigned int	Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
+}
+
+void	Bureaucrat::signForm(Form &f) const
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cerr << this->getName() << " couldn't sign ";
+		std::cerr << f.getName() << " because ";
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 char const	*Bureaucrat::GradeTooHighException::what(void) const throw()
