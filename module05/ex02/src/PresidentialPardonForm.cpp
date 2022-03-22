@@ -1,31 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 18:33:01 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/22 18:34:23 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : _var(0)
+PresidentialPardonForm::PresidentialPardonForm(std::string name)
+	: AForm(name, 25, 5)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src)
+	: AForm(src)
 {
-	*this = src;
 }
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
-	this->_var = rhs.getVar();
+	AForm::operator=(rhs);
 	return (*this);
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-}
-
-int	PresidentialPardonForm::getVar(void) const
-{
-	return (this->_var);
-}
-
-std::ostream	&operator<<(std::ostream &cout, PresidentialPardonForm const &i)
-{
-	cout << i.getVar();
-	return (cout);
 }

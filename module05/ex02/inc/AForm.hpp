@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:25:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 16:30:28 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 18:08:06 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FORM_HPP__
-# define __FORM_HPP__
+#ifndef __AFORM_HPP__
+# define __AFORM_HPP__
 
 # include <iostream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	public:
-		Form(std::string name, unsigned int sign_grade, unsigned int exec_grade);
-		Form(Form const &src);
-		Form &operator=(Form const &rhs);
-		~Form(void);
+		AForm(std::string name, unsigned int sign_grade, unsigned int exec_grade);
+		AForm(AForm const &src);
+		AForm &operator=(AForm const &rhs);
+		~AForm(void);
 		std::string const	getName(void) const;
 		bool				getStatus(void) const;
-		unsigned int	getSignGrade(void) const;
-		unsigned int	getExecGrade(void) const;
-		void			beSigned(Bureaucrat const &b);
+		unsigned int		getSignGrade(void) const;
+		unsigned int		getExecGrade(void) const;
+		void				beSigned(Bureaucrat const &b);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -47,6 +47,6 @@ class Form
 		unsigned int const	_exec_grade;
 };
 
-std::ostream	&operator<<(std::ostream &o, Form const &i);
+std::ostream	&operator<<(std::ostream &o, AForm const &i);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/22 00:30:39 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/22 18:08:51 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC =				\
  	PresidentialPardonForm.cpp		\
  	RobotomyRequestForm.cpp		\
  	ShrubberyCreationForm.cpp		\
- 	Form.cpp		\
+ 	AForm.cpp		\
  	Bureaucrat.cpp	\
 	main.cpp		\
 

@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:24 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 16:33:00 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 18:09:31 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ unsigned int	Bureaucrat::getGrade(void) const
 	return (this->_grade);
 }
 
-void	Bureaucrat::signForm(Form &f) const
+void	Bureaucrat::signForm(AForm &f) const
 {
 	try
 	{

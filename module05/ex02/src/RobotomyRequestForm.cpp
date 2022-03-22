@@ -1,31 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 18:30:00 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/22 18:31:02 by lraffin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : _var(0)
+RobotomyRequestForm::RobotomyRequestForm(std::string name)
+	: AForm(name, 72, 45)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src)
+	: AForm(src)
 {
-	*this = src;
 }
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
-	this->_var = rhs.getVar();
+	AForm::operator=(rhs);
 	return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-}
-
-int	RobotomyRequestForm::getVar(void) const
-{
-	return (this->_var);
-}
-
-std::ostream	&operator<<(std::ostream &cout, RobotomyRequestForm const &i)
-{
-	cout << i.getVar();
-	return (cout);
 }

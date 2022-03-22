@@ -6,63 +6,28 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 16:37:49 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/22 18:31:47 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
-	{
-	try
-	{
-		Form("WPE", 0, 150);
-	}
-	catch(std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form("WPE", 150, 0);
-	}
-	catch(std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form("WPE", 151, 150);
-	}
-	catch(std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form("WPE", 150, 151);
-	}
-	catch(std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	}
+	Bureaucrat	boss("boss", 1);
+	ShrubberyCreationForm	arbre("bouisson");
 
-	Bureaucrat	walter("Walter", 1);
-	Form		form("FSP", 1, 12);
+	std::cout << arbre << std::endl;
 
-	std::cout << std::endl;
-	std::cout << form << std::endl;
+	boss.signForm(arbre);
 
-	walter.demote();
-	walter.signForm(form);
-	walter.promote();
-	walter.signForm(form);
+	std::cout << arbre << std::endl;
 
-	std::cout << std::endl;
-	std::cout << form << std::endl;
+	ShrubberyCreationForm	arbre2(arbre);
+
+	std::cout << arbre2 << std::endl;
 
 	return (0);
 }
