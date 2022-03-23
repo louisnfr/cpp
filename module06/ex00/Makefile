@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/13 02:02:46 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/23 16:19:04 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,13 +56,20 @@ fclean: clean
 
 re: fclean all
 
+test: $(NAME)
+		./$< 0
+		./$< nan
+		./$< 42.0f
+		./$<
+		./$< 12 53.0f
+
 push:
 	@git add .
 	@git status
 	@git commit -m "cpp (make push)"
 	@git push
 
-.PHONY: all clean fclean re push
+.PHONY: all clean fclean re test push
 
 YELLOW	= \033[38;5;184m
 GREEN	= \033[38;5;46m
