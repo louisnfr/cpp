@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/23 16:19:04 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/23 16:45:57 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,12 +56,46 @@ fclean: clean
 
 re: fclean all
 
-test: $(NAME)
-		./$< 0
-		./$< nan
-		./$< 42.0f
+test: try_error try_char try_int try_float try_double
+
+try_error: $(NAME)
+		@echo "*** $(B_GREEN)ERROR$(NOC) ***\n"
 		./$<
-		./$< 12 53.0f
+		./$< 1 2 53.0f
+		./$< bonjour
+
+try_char: $(NAME)
+		@echo "\n*** $(B_GREEN)CHAR$(NOC) ***\n"
+		./$< 'c'
+		./$< 'a'
+		./$< 'Z'
+
+try_int: $(NAME)
+		@echo "\n*** $(B_GREEN)INT$(NOC) ***\n"
+		./$< 0
+		./$< -42
+		./$< 42
+		./$< 2147483647
+		./$< -2147483648
+		./$< 2147483648
+
+try_float: $(NAME)
+		@echo "\n*** $(B_GREEN)FLOAT$(NOC) ***\n"
+		./$< 0.0f
+		./$< -4.2f
+		./$< 186.492f
+		./$< -inff
+		./$< +inff
+		./$< nanf
+
+try_double: $(NAME)
+		@echo "\n*** $(B_GREEN)DOUBLE$(NOC) ***\n"
+		./$< 0.0
+		./$< 53.0
+		./$< 9178.1320
+		./$< -inf
+		./$< +inf
+		./$< nan
 
 push:
 	@git add .
@@ -69,11 +103,13 @@ push:
 	@git commit -m "cpp (make push)"
 	@git push
 
-.PHONY: all clean fclean re test push
+.PHONY: all clean fclean re push test
+		try_error try_char try_int try_float try_double
 
 YELLOW	= \033[38;5;184m
 GREEN	= \033[38;5;46m
 CYAN	= \033[0;49;96m
+B_GREEN	= \033[1;32m
 COMPILE	= [$(CYAN)COMP$(NOC)]
 INFO	= [$(YELLOW)INFO$(NOC)]
 DONE	= [$(GREEN)DONE$(NOC)]
