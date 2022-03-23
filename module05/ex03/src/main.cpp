@@ -6,53 +6,39 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 22:22:05 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/23 03:05:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
-	{
-		std::cout << "* SHRUBBERY TEST *" << std::endl << std::endl;
+	Intern		intern;
+	Bureaucrat	crat("Franklin", 5);
+	AForm		*form;
 
-		ShrubberyCreationForm	shrub("garden");
-		Bureaucrat				gardener("gardener", 138);
+	form = intern.makeForm("ShrubberyCreation", "forest");
+	std::cout << *form;
+	crat.signForm(*form);
+	crat.executeForm(*form);
+	delete form;
 
-		std::cout << shrub << std::endl;
-
-		gardener.executeForm(shrub);
-		gardener.signForm(shrub);
-		gardener.executeForm(shrub);
-		gardener.promote();
-		gardener.executeForm(shrub);
-	}
 	std::cout << std::endl;
-	{
-		std::cout << "* ROBOTOMIZE TEST *" << std::endl << std::endl;
 
-		RobotomyRequestForm	robot("robot");
-		Bureaucrat			bureau("bureaucrat", 45);
+	form = intern.makeForm("Unknown", "target");
 
-		std::cout << robot << std::endl;
-
-		bureau.signForm(robot);
-		bureau.executeForm(robot);
-	}
 	std::cout << std::endl;
-	{
-		std::cout << "* PRESIDENTIAL TEST *" << std::endl << std::endl;
 
-		PresidentialPardonForm	pardon("pardon");
-		Bureaucrat				president("president", 1);
+	form = intern.makeForm("RobotomyRequest", "target");
+	std::cout << *form;
+	delete form;
 
-		std::cout << pardon << std::endl;
+	std::cout << std::endl;
 
-		president.signForm(pardon);
-		president.executeForm(pardon);
-	}
+	form = intern.makeForm("PresidentialPardon", "target");
+	std::cout << *form;
+	delete form;
+
 	return (0);
 }
