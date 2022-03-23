@@ -6,15 +6,15 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/13 00:35:31 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/23 15:21:39 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karenFilter
+NAME = harlFilter
 
 SRC =			\
 	main.cpp	\
-	Karen.cpp	\
+	Harl.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

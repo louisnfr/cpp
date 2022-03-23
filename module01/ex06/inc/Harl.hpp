@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,11 +15,11 @@
 
 # include <iostream>
 
-class Karen
+class Harl
 {
 	public:
-		Karen(void);
-		~Karen(void);
+		Harl(void);
+		~Harl(void);
 		void	complain(std::string level);
 	private:
 		void	debug(void);

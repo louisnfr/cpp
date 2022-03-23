@@ -6,15 +6,15 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 00:03:30 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/13 00:43:18 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:20:53 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(int ac, char **av)
 {
-	Karen	karen;
+	Harl	karen;
 
 	if (ac != 2)
 	{

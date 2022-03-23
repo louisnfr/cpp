@@ -6,15 +6,15 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:03:18 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/12 23:58:04 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/23 15:20:53 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(void)
 {
-	Karen		karen;
+	Harl		karen;
 	std::string	input;
 
 	std::cout << "(DEBUG, INFO, WARNING, ERROR)" << std::endl;
