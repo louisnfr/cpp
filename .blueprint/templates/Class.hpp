@@ -10,9 +10,9 @@ class Class
 		Class(Class const &src);
 		Class &operator=(Class const &rhs);
 		~Class(void);
-		int	getVar(void) const;
+		int	getValue(void) const;
 	private:
-		int	_var;
+		int	_value;
 };
 
 std::ostream	&operator<<(std::ostream &o, Class const &i);
