@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 03:00:39 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/24 03:00:39 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/24 03:06:40 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,18 @@ struct Data
 	int B;
 };
 
+uintptr_t	serialize(Data *ptr)
+{
+}
+
+Data	*deserialize(uintptr_t raw)
+{
+}
+
 int	main(void)
 {
-	Data	d;
-	d.A = 4;
-	std::cout << d.A << std::endl;
+	
+
+
 	return (0);
 }
