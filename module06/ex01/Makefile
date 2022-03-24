@@ -13,7 +13,6 @@
 NAME = serialize
 
 SRC =				\
- 	Data.cpp		\
 	main.cpp		\
 
 HOST = $(shell hostname)
