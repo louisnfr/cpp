@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include <limits>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
@@ -36,11 +37,12 @@ void	search_contacts(PhoneBook phonebook)
 	{
 		std::cout << "Enter an index: ";
 		std::cin >> input;
-		if (std::cin.fail() == true)
+		if (std::cin.eof())
+			exit(0);
+		else if (std::cin.fail())
 		{
-			// clear error flag
+			// clear error flag and skip to next line
 			std::cin.clear();
-			// skip to next line
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else if (input >= 1 && input <= 8)
