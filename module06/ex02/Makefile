@@ -6,18 +6,14 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/13 02:02:46 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/24 15:28:22 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = identify
 
-SRC =				\
- 	C.cpp		\
- 	B.cpp		\
- 	A.cpp		\
- 	Base.cpp		\
-	main.cpp		\
+SRC =			\
+	main.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)
