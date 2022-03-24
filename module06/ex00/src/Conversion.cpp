@@ -22,7 +22,7 @@ Conversion::Conversion(char const *s)
 	if (isInt(s) == false && isFloat(s) == false
 		&& isDouble(s) == false && isChar(s) == false)
 		this->_type = ERROR;
-	// cast other values based on type found
+	// explicit cast other values based on type found
 	setValues();
 	// set flags for int and char
 	setFlags();
