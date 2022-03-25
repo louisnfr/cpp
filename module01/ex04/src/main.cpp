@@ -6,20 +6,17 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:47:41 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/11 17:11:06 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/25 14:41:23 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
+#include <cstdlib>
 
-static void	exit_error(std::string error_message, std::string option)
+static void	exit_error(char const *error_message)
 {
-	std::cerr << "Error: " << error_message;
-	if (!option.empty())
-		std::cerr << ": " << option;
-	std::cerr << std::endl;
+	std::cerr << "Error: " << error_message << std::endl;
 	exit (EXIT_FAILURE);
 }
 
@@ -43,7 +40,7 @@ static void	search_file(std::ifstream &infile, std::ofstream &outfile,
 	std::string	line;
 
 	if (s1.empty())
-		exit_error("s1 is empty", "");
+		exit_error("s1 is empty");
 	while (!infile.eof())
 	{
 		std::getline(infile, line);
@@ -62,14 +59,14 @@ int	main(int ac, char **av)
 	std::string		replace;
 
 	if (ac != 4)
-		exit_error("bad arguments", "");
+		exit_error("bad arguments");
 	infile.open(av[1]);
 	if (infile.fail())
-		exit_error("failed to open file", (std::string)av[1]);
+		exit_error("failed to open file");
 	replace = (std::string)av[1] + ".replace";
 	outfile.open(replace.c_str());
 	if (outfile.fail())
-		exit_error("failed to open file", (std::string)av[1]);
+		exit_error("failed to open file");
 	search_file(infile, outfile, av[2], av[3]);
 	infile.close();
 	outfile.close();
