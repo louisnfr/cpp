@@ -6,14 +6,14 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/25 17:04:20 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/25 17:44:05 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = template
 
-SRC =				\
-	main.cpp		\
+SRC =			\
+	main.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

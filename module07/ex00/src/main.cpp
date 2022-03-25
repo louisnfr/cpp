@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:04:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/25 17:05:45 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/25 17:50:10 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 	int	a = 2;
 	int	b = 3;
 
-	::swap( a, b );
+	::swap(a, b);
 
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
