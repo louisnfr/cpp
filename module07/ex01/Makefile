@@ -6,14 +6,13 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/13 02:02:46 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/28 15:02:52 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = iter
 
 SRC =				\
- 	iter.cpp		\
 	main.cpp		\
 
 HOST = $(shell hostname)
