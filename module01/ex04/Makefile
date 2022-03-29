@@ -6,11 +6,11 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/25 14:35:06 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/29 23:15:54 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
+NAME = replace
 
 SRC =			\
 	main.cpp	\
