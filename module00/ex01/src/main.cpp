@@ -32,7 +32,7 @@ void	search_contacts(PhoneBook phonebook)
 {
 	int	input;
 
-	phonebook.display_contacts();
+	phonebook.display_phonebook();
 	while (true)
 	{
 		std::cout << "Enter an index: ";
@@ -41,13 +41,12 @@ void	search_contacts(PhoneBook phonebook)
 			exit(0);
 		else if (std::cin.fail())
 		{
-			// clear error flag and skip to next line
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 		else if (input >= 1 && input <= 8)
 		{
-			phonebook.contact[input - 1].display_contact();
+			phonebook.display_contact(input - 1);
 			break ;
 		}
 	}
@@ -67,7 +66,7 @@ int	main(void)
 		input = prompt();
 		if (input == "ADD")
 		{
-			phonebook.contact[i].fill_contact();
+			phonebook.fill_contact(i);
 			i++;
 		}
 		else if (input == "SEARCH")

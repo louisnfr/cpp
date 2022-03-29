@@ -24,11 +24,21 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::display_contacts(void)
+void	PhoneBook::display_phonebook(void)
 {
 	for (int i = 0; i < 8; i++)
 	{
 		std::cout << "|" << std::setw(10) << i + 1 << "|";
-		this->contact[i].display_names();
+		this->_contact[i].display_names();
 	}
+}
+
+void	PhoneBook::fill_contact(unsigned int index)
+{
+	this->_contact[index].fill_contact();
+}
+
+void	PhoneBook::display_contact(unsigned int index)
+{
+	this->_contact[index].display_contact();
 }
