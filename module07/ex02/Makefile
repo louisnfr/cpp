@@ -6,7 +6,7 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/28 15:03:38 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/29 17:41:55 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = array
 
 SRC =				\
 	main.cpp		\
+ 	# Array.cpp		\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

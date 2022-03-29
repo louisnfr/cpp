@@ -1,40 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Array.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 15:25:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/29 17:41:49 by lraffin          ###   ########.fr       */
+/*   Created: 2022/03/29 15:29:55 by lraffin           #+#    #+#             */
+/*   Updated: 2022/03/29 17:33:32 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ARRAY_HPP__
-# define __ARRAY_HPP__
-
-# include <iostream>
-
-template<typename T>
-class Array
-{
-	public:
-		Array<T>(void);
-		Array<T>(unsigned int n);
-		Array<T>(Array<T> const &src);
-		Array<T>	&operator=(Array<T> const &rhs);
-		T			&operator[](unsigned int index);
-		~Array<T>(void);
-		unsigned int	getSize(void) const;
-		class OutOfRangeException : public std::exception
-		{
-			public:
-				virtual const char *what() const throw();
-		};
-	private:
-		unsigned int	_n;
-		T				*_content;
-};
+#include "Array.hpp"
 
 template<typename T>
 Array<T>::Array(void) : _n(0)
@@ -93,5 +69,3 @@ char const	*Array<T>::OutOfRangeException::what(void) const throw()
 {
 	return ("index is out of range");
 }
-
-#endif
