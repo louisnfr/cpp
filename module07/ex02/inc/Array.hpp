@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:25:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/29 17:41:49 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/29 22:34:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,36 @@ class Array
 };
 
 template<typename T>
-Array<T>::Array(void) : _n(0)
+Array<T>::Array(void)
 {
+	this->_n = 0;
+	this->_content = 0;
 	std::cout << "empty array created" << std::endl;
 }
 
 template<typename T>
-Array<T>::Array(unsigned int n) : _n(n)
+Array<T>::Array(unsigned int n)
 {
+	this->_n = n;
+	this->_content = new T[n];
 	std::cout << "array of size " << n << " created" << std::endl;
 }
 
 template<typename T>
-Array<T>::Array(Array<T> const &src)
+Array<T>::Array(Array<T> const &src) : _n(0)
 {
+	std::cout << "copy constructor" << std::endl;
 	*this = src;
 }
 
 template<typename T>
 Array<T>	&Array<T>::operator=(Array<T> const &rhs)
 {
-	delete [] this->_content;
+	std::cout << "assignation operator" << std::endl;
+	if (this->_n > 0)
+		delete [] this->_content;
 	T *new_content = new T[rhs.getSize()];
-	for (int i = 0; i < rhs.getSize(); i++)
+	for (unsigned int i = 0; i < rhs.getSize(); i++)
 		new_content[i] = rhs._content[i];
 	this->_content = new_content;
 	this->_n = rhs.getSize();
