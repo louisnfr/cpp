@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:47:41 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/29 23:41:55 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/31 17:16:48 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int	main(int ac, char **av)
 
 	check_errors(ac, av);
 	infile.open(av[1]);
+	if (infile.fail())
+		exit_error("failed to open file");
 	replace = static_cast<std::string>(av[1]) + ".replace";
 	search_file(infile, replace, av[2], av[3]);
 	infile.close();

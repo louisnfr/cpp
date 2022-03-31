@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __KAREN_HPP__
-# define __KAREN_HPP__
+#ifndef __HARL_HPP__
+# define __HARL_HPP__
 
 # include <iostream>
 

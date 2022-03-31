@@ -51,7 +51,6 @@ void	Harl::_error(void)
 
 void	Harl::complain(std::string level)
 {
-	Harl		karen;
 	int			i;
 	std::string	str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void		(Harl::*func[4])(void) = {&Harl::_debug, &Harl::_info,
