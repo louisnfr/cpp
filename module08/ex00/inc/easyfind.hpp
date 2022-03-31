@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:26:32 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/30 15:34:48 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/31 15:09:15 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template<typename T>
 T	easyfind(T *container, int n)
 {
-
+	std::iter
 }
 
 #endif
