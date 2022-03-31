@@ -6,13 +6,16 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:51:52 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/31 22:51:52 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/01 00:45:44 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <algorithm>
+#include <iterator>
+#include <climits>
 
-Span::Span(void) : _var(0)
+Span::Span(unsigned int n) : _n(n)
 {
 }
 
@@ -23,21 +26,58 @@ Span::Span(Span const &src)
 
 Span	&Span::operator=(Span const &rhs)
 {
-	this->_var = rhs.getVar();
+	this->_vector.clear();
+	this->_n = rhs._n;
+	this->_vector = rhs._vector;
 	return (*this);
 }
 
-Span::~Span(void)
+void	Span::addNumber(int n)
 {
+	if (!this->_n)
+		throw AlreadyFull();
+	this->_vector.push_back(n);
+	this->_n--;
 }
 
-int	Span::getVar(void) const
+void	Span::print(void) const
 {
-	return (this->_var);
+	std::copy(this->_vector.begin(), this->_vector.end(),
+			std::ostream_iterator<int>(std::cout, " "));
+	std::cout << std::endl;
 }
 
-std::ostream	&operator<<(std::ostream &cout, Span const &i)
+unsigned int	Span::longestSpan(void) const
 {
-	cout << i.getVar();
-	return (cout);
+	unsigned int	max;
+	unsigned int	min;
+
+	max = *std::max_element(_vector.begin(), _vector.end());
+	min = *std::min_element(_vector.begin(), _vector.end());
+	return (max - min);
+}
+
+unsigned int	Span::shortestSpan(void) const
+{
+	std::vector<int>	tmp = _vector;
+	unsigned int		shortest_span = UINT_MAX;
+	std::vector<int>::const_iterator it;
+
+	if (this->_vector.size() < 2)
+		throw NoSpan();
+	std::sort(tmp.begin(), tmp.end());
+	for (it = tmp.begin(); it + 1 != tmp.end(); it++)
+	{
+		unsigned int diff = *(it + 1) - *it;
+		if (diff < shortest_span)
+			shortest_span = diff;
+	}
+	return (shortest_span);
+}
+
+void	Span::addNumbers(unsigned int n, int range)
+{
+	srand(time(NULL));
+	for (size_t i = 0; i < n; i++)
+		this->addNumber(rand() % range);
 }

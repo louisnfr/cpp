@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:51:54 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/31 22:51:54 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/01 00:45:48 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,42 @@
 # define __SPAN_HPP__
 
 # include <iostream>
+# include <vector>
+
+class NoSpan : public std::exception
+{
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("No span found");
+		}
+};
+
+class AlreadyFull : public std::exception
+{
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("Already full");
+		}
+};
 
 class Span
 {
 	public:
-		Span(void);
+		explicit Span(unsigned int n);
 		Span(Span const &src);
 		Span &operator=(Span const &rhs);
-		~Span(void);
-		int	getVar(void) const;
+		~Span(void) {};
+		void	print(void) const;
+		void	addNumber(int n);
+		void	addNumbers(unsigned int n, int range);
+		unsigned int longestSpan(void) const;
+		unsigned int shortestSpan(void) const;
 	private:
-		int	_var;
-};
+		unsigned int		_n;
+		std::vector<int>	_vector;
 
-std::ostream	&operator<<(std::ostream &o, Span const &i);
+};
 
 #endif
