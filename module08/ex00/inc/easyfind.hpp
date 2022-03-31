@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:26:32 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/31 15:09:15 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/03/31 22:42:01 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,32 @@
 # include <iostream>
 # include <algorithm>
 
-template<typename T>
-T	easyfind(T *container, int n)
+class ValueNotFound : public std::exception
 {
-	std::iter
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("Value not found");
+		}
+};
+
+template<typename T>
+void	easyfind(T &container, int n)
+{
+	typename T::const_iterator it;
+
+	it = std::find(container.begin(), container.end(), n);
+	try
+	{
+		if (it == container.end())
+			throw ValueNotFound();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+		return ;
+	}
+	std::cout << "Value found: " << *it << std::endl;
 }
 
 #endif

@@ -6,11 +6,11 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/30 15:26:44 by lraffin          ###   ########.fr        #
+#    Updated: 2022/03/31 22:37:09 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = easyfind
 
 SRC =				\
 	main.cpp		\
