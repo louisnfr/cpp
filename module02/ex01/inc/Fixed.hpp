@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 01:54:46 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/15 20:49:38 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/04 18:34:24 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,11 @@ class Fixed
 		Fixed(float const f);
 		Fixed(Fixed const &src);
 		~Fixed(void);
-
 		Fixed	&operator=(Fixed const &rhs);
-
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
 		int		toInt(void) const;
-
 	private:
 		static int const	_binary_point = 8;
 		int					_raw_bits;
