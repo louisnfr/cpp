@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:09:32 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/16 22:32:30 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/05 14:57:12 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ Fixed	scalar_product(Point a, Point b, Point c)
 bool	bsp(Point a, Point b, Point c, Point point)
 {
 	Fixed	sp1, sp2, sp3;
-	bool	negatives;
-	bool	positives;
+	bool	all_negatives;
+	bool	all_positives;
 
 	sp1 = scalar_product(point, a, b);
 	sp2 = scalar_product(point, b, c);
 	sp3 = scalar_product(point, c, a);
 
-	negatives = (sp1 < 0) || (sp2 < 0) || (sp3 < 0);
-	positives = (sp1 > 0) || (sp2 > 0) || (sp3 > 0);
-	
+	all_negatives = (sp1 < 0) && (sp2 < 0) && (sp3 < 0);
+	all_positives = (sp1 > 0) && (sp2 > 0) && (sp3 > 0);
+
 	if (sp1 == 0 || sp2 == 0 || sp3 == 0)
 		return (false);
-
-	return (!(negatives && positives));
+	return (all_negatives || all_positives);
 }
