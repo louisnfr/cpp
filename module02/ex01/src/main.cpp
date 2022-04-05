@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 02:02:55 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/15 21:50:31 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/05 14:29:59 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	Fixed		a;
-	Fixed const	b(10);
+	Fixed const	b(-10);
 	Fixed const	c(42.42f);
 	Fixed const	d(b);
 
