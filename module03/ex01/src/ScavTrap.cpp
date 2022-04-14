@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:51:18 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 22:46:52 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/14 14:36:14 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)
 {
 	std::cout << "[\033[33mSCAV\033[0m] ";
 	std::cout << _name << " has been cloned." << std::endl;
+	*this = src;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 {
-	*this = rhs;
+	this->_attack = rhs._attack;
+	this->_energy = rhs._energy;
+	this->_hit = rhs._hit;
 	return (*this);
 }
 
