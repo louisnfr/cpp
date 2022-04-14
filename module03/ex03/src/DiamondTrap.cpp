@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:51:18 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/17 22:43:37 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/14 14:45:35 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,14 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src)
 {
 	std::cout << "[\033[34mDIAM\033[0m] ";
 	std::cout << _name << " has been cloned." << std::endl;
+	*this = src;
 }
 
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs)
 {
-	*this = rhs;
+	this->_attack = rhs._attack;
+	this->_energy = rhs._energy;
+	this->_hit = rhs._hit;
 	return (*this);
 }
 
