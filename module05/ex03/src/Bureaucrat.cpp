@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:24 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 22:02:47 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/15 12:15:48 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(std::string const &name, unsigned int grade)
 	check_grade(this->_grade);
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name)
 {
 	*this = src;
 }

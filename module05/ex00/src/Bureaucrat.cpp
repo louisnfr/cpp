@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:24 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 00:26:40 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/15 12:15:25 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(std::string const &name, unsigned int grade)
 	std::cout << "constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name)
 {
 	std::cout << "copy constructor" << std::endl;
 	*this = src;

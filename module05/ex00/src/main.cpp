@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 01:39:34 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/15 12:16:07 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	std::cout << tommy << std::endl;
+	std::cout << tom << std::endl;
 	std::cout << arthur << std::endl;
 	std::cout << john << std::endl;
 
@@ -71,7 +72,7 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	
+
 	std::cout << std::endl;
 
 	return (0);
