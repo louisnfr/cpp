@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/14 15:25:53 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/19 15:08:39 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ int	main(void)
 
 	delete one;
 	delete two; // this delete would not work if they were using the same brain
+
+	std::cout << std::endl;
+	
+	Dog basic;
+	Dog tmp = basic;
 
 	return (0);
 }
