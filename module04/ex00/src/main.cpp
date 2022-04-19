@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:16:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/18 01:10:42 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/19 15:01:36 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,19 @@ int	main(void)
 
 	const WrongAnimal	*w_ani = new WrongAnimal();
 	const WrongAnimal	*w_cat = new WrongCat();
+	const WrongCat		*w_cat2 = new WrongCat();
 
 	std::cout << std::endl;
 
 	std::cout << w_ani->getType() << " " << std::endl;
 	std::cout << w_cat->getType() << " " << std::endl;
+	std::cout << w_cat2->getType() << " " << std::endl;
 
 	std::cout << std::endl;
 
 	w_ani->makeSound();
 	w_cat->makeSound();
+	w_cat2->makeSound();
 
 	std::cout << std::endl;
 
