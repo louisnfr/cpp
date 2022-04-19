@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 22:40:26 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/22 16:37:49 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/19 18:10:01 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ int	main(void)
 	std::cout << form << std::endl;
 
 	walter.demote();
+	std::cout << walter << std::endl;
 	walter.signForm(form);
 	walter.promote();
+	std::cout << walter << std::endl;
 	walter.signForm(form);
 
 	std::cout << std::endl;
