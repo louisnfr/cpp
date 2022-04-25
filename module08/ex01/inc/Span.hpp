@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:51:54 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/01 00:45:48 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/25 18:29:57 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AlreadyFull : public std::exception
 class Span
 {
 	public:
-		explicit Span(unsigned int n);
+		explicit Span(unsigned int n = 0);
 		Span(Span const &src);
 		Span &operator=(Span const &rhs);
 		~Span(void) {};
