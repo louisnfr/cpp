@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:56:16 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/24 15:40:41 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:41:19 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,9 @@ int	main(void)
 	identify(p1);
 	std::cout << "ref: ";
 	identify(*p2);
+
+	delete p1;
+	delete p2;
+
 	return (0);
 }
