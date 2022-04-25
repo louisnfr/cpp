@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 03:00:39 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/24 16:59:08 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/25 16:17:57 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	main(void)
 
 	std::cout << "Address: " << copy << std::endl;
 	std::cout << "Copy: " << std::endl;
-	std::cout << copy->A << std::endl;
-	std::cout << copy->B << std::endl;
+	std::cout << "A: " << copy->A << std::endl;
+	std::cout << "B: " << copy->B << std::endl;
 
 	return (0);
 }
