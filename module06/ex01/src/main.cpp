@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 03:00:39 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/25 16:17:57 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:35:45 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ Data	*deserialize(uintptr_t raw)
 
 int	main(void)
 {
-	Data		*data = new Data;
+	Data		data;
 	uintptr_t	serial;
-	Data		*copy = new Data;
+	Data		*copy;
 
-	data->A = 42;
-	data->B = 0;
+	data.A = 42;
+	data.B = 0;
 
-	std::cout << "Address: " << data << std::endl;
+	std::cout << "Address: " << &data << std::endl;
 	std::cout << "Data: " << std::endl;
-	std::cout << "A: " << data->A << std::endl;
-	std::cout << "B: " << data->B << std::endl;
+	std::cout << "A: " << data.A << std::endl;
+	std::cout << "B: " << data.B << std::endl;
 
-	serial = serialize(data);
+	serial = serialize(&data);
 	std::cout << std::endl;
 
 	std::cout << "Serial: " << serial << std::endl;
