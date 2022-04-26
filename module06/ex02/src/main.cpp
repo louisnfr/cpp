@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:56:16 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/26 14:22:59 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/26 14:31:06 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,21 @@ void	identify(Base &p)
 	{
 		A classA = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
-		return;
+		return ;
 	}
 	catch(std::exception & e) {}
 	try
 	{
 		B classB = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
-		return;
+		return ;
 	}
 	catch(std::exception & e) {}
 	try
 	{
 		C classC = dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
-		return;
+		return ;
 	}
 	catch(std::exception & e) {}
 }
