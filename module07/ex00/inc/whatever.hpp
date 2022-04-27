@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:04:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/27 19:24:51 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/27 19:40:39 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,24 @@ template<typename T>
 T	max(T a, T b)
 {
 	return (a > b ? a : b);
+}
+
+class Awesome {
+	public:
+		Awesome( int n ) : _n( n ) {}
+		bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+		bool operator!=( Awesome const & rhs ) const { return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+		bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+		bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+		bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+		int getN( void ) const { return (this->_n); }
+	private:
+		int _n;
+};
+
+std::ostream & operator<<(std::ostream & o, Awesome const & awesome) {
+	return o << awesome.getN();
 }
 
 #endif
