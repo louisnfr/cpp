@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:07:15 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/27 20:25:53 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/28 01:24:19 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 # define BLUE	"\033[34m"
-# define RED	"\033[33m"
+# define RED	"\033[31m"
 # define NOC	"\033[0m"
 
 template<typename T>
