@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:25:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/29 22:40:01 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/27 20:51:23 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int main(void)
 {
+	Array<int>	abort;
+
 	Array<int>	numbers(SIZE);
 	int			*mirror = new int[SIZE];
 
