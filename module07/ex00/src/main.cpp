@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:04:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/27 19:42:19 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/27 19:46:01 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	std::cout << "\033[1;33m* INT *\033[0m\n" << std::endl;
+	std::cout << RED << "* INT *" << NOC << std::endl;
 	{
 
 		int	a = 0;
@@ -28,7 +28,7 @@ int	main(void)
 		std::cout << "min(a, b) = " <<::min(a, b) << std::endl;
 		std::cout << "max(a, b) = " <<::max(a, b) << std::endl;
 	}
-	std::cout << std::endl << "\033[1;33m* CHAR *\033[0m\n" << std::endl;
+	std::cout << std::endl << RED << "* CHAR *" << NOC << std::endl;
 	{
 		std::string c = "zzz";
 		std::string d = "aaa";
@@ -41,7 +41,7 @@ int	main(void)
 		std::cout << "min(c, d) = " << ::min(c, d) << std::endl;
 		std::cout << "max(c, d) = " << ::max(c, d) << std::endl;
 	}
-	std::cout << std::endl << "\033[1;33m* AWESOME *\033[0m\n" << std::endl;
+	std::cout << std::endl << RED << "* AWESOME *" << NOC << std::endl;
 	{
 		Awesome e = Awesome(5);
 		Awesome f = Awesome(8);
