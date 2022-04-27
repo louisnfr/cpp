@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:04:33 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/27 19:44:29 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/27 19:49:55 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ class Awesome {
 		int _n;
 };
 
-std::ostream	&operator<<(std::ostream & o, Awesome const & awesome) {
-	return o << awesome.getN();
+std::ostream	&operator<<(std::ostream & o, Awesome const & awesome)
+{
+	o << awesome.getN();
+	return (o);
 }
 
 #endif
