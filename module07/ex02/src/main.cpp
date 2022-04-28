@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:25:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/28 01:58:10 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/28 02:07:05 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main(void)
 {
-	std::cout << YLW << "***** INTEGERS *****" << NOC << std::endl;
+	std::cout << YLW << "***** INTEGER *****" << NOC << std::endl;
 	{
 		std::srand(time(NULL));
 
@@ -45,7 +45,7 @@ int main(void)
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	std::cout << YLW << "***** STRINGS *****" << NOC << std::endl;
+	std::cout << YLW << "***** STRING *****" << NOC << std::endl;
 	{
 		Array<std::string>	strs(SIZE);
 
@@ -66,7 +66,7 @@ int main(void)
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	std::cout << YLW << "***** CHARS *****" << NOC << std::endl;
+	std::cout << YLW << "***** CHAR *****" << NOC << std::endl;
 	{
 		Array<char> b = Array<char>(3);
 
