@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:26:34 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/31 22:45:05 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/05/03 16:05:19 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
 	easyfind(listInt, 0);
 	easyfind(listInt, -45);
 	easyfind(listInt, -100);
+	easyfind(listInt, -1);
 	easyfind(listInt, 8);
 
 	return (0);
