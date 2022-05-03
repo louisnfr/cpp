@@ -6,14 +6,14 @@
 #    By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:22:29 by lraffin           #+#    #+#              #
-#    Updated: 2022/03/28 15:02:52 by lraffin          ###   ########.fr        #
+#    Updated: 2022/04/27 20:31:53 by lraffin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = iter
 
-SRC =				\
-	main.cpp		\
+SRC =			\
+	main.cpp	\
 
 HOST = $(shell hostname)
 ifeq ($(HOST),macbook)

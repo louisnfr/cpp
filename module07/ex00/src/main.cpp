@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:04:36 by lraffin           #+#    #+#             */
-/*   Updated: 2022/03/25 17:50:10 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/28 02:02:42 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,44 @@
 
 int	main(void)
 {
-	int	a = 2;
-	int	b = 3;
+	std::cout << YLW << "***** INTEGER *****" << NOC << std::endl;
+	{
+		int	a = 0;
+		int	b = 83;
 
-	::swap(a, b);
+		std::cout << "a = " << a << ", b = " << b << std::endl;
+		std::cout << "swap" << std::endl;
+		::swap(a, b);
+		std::cout << "a = " << a << ", b = " << b << std::endl << std::endl;
 
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
+		std::cout << "min(a, b) = " <<::min(a, b) << std::endl;
+		std::cout << "max(a, b) = " <<::max(a, b) << std::endl;
+	}
+	std::cout << std::endl << YLW << "***** CHAR *****" << NOC << std::endl;
+	{
+		std::string c = "zzz";
+		std::string d = "aaa";
 
-	::swap(c, d);
+		std::cout << "c = " << c << ", d = " << d << std::endl;
+		std::cout << "swap" << std::endl;
+		::swap(c, d);
+		std::cout << "c = " << c << ", d = " << d << std::endl << std::endl;
 
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+		std::cout << "min(c, d) = " << ::min(c, d) << std::endl;
+		std::cout << "max(c, d) = " << ::max(c, d) << std::endl;
+	}
+	std::cout << std::endl << YLW << "***** AWESOME *****" << NOC << std::endl;
+	{
+		Awesome e = Awesome(5);
+		Awesome f = Awesome(8);
 
+		std::cout << "e = " << e << ", f = " << f << std::endl;
+		std::cout << "swap" << std::endl;
+		::swap(e , f);
+		std::cout << "e = " << e << ", f = " << f << std::endl << std::endl;
+
+		std::cout << "min(e, f) = " << ::min(e, f) << std::endl;
+		std::cout << "max(e, f) = " << ::max(e, f) << std::endl;
+	}
 	return (0);
 }

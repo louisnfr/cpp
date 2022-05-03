@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:56:16 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/25 17:41:19 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/04/26 14:31:06 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@ class C: public Base {};
 
 Base	*generate(void)
 {
-	srand(time(NULL));
 	int	rand = std::rand() % 3;
 
 	switch (rand)
 	{
 		case 0:
-			std::cout << "A" << std::endl;
+			std::cout << "class A generated" << std::endl;
 			return (new A);
 		case 1:
-			std::cout << "B" << std::endl;
+			std::cout << "class B generated" << std::endl;
 			return (new B);
 		case 2:
-			std::cout << "C" << std::endl;
+			std::cout << "class C generated" << std::endl;
 			return (new C);
 		default:
 			return (NULL);
@@ -52,28 +51,44 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	if (dynamic_cast<A*>(&p))
+	try
+	{
+		A classA = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
-	else if (dynamic_cast<B*>(&p))
+		return ;
+	}
+	catch(std::exception & e) {}
+	try
+	{
+		B classB = dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
-	else if (dynamic_cast<C*>(&p))
+		return ;
+	}
+	catch(std::exception & e) {}
+	try
+	{
+		C classC = dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
+		return ;
+	}
+	catch(std::exception & e) {}
 }
 
 int	main(void)
 {
+	srand(time(NULL));
+
 	Base	*p1 = generate();
-	Base	*p2 = generate();
+	Base	&p2 = *p1;
 
 	std::cout << std::endl;
 
-	std::cout << "pointer: ";
+	std::cout << "ptr identified: ";
 	identify(p1);
-	std::cout << "ref: ";
-	identify(*p2);
+	std::cout << "ref identified: ";
+	identify(p2);
 
 	delete p1;
-	delete p2;
 
 	return (0);
 }
