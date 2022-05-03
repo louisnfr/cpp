@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:51:52 by lraffin           #+#    #+#             */
-/*   Updated: 2022/04/01 00:45:44 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/05/03 16:15:50 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ unsigned int	Span::longestSpan(void) const
 	unsigned int	max;
 	unsigned int	min;
 
+	if (this->_vector.size() < 2)
+		throw NoSpan();
 	max = *std::max_element(_vector.begin(), _vector.end());
 	min = *std::min_element(_vector.begin(), _vector.end());
 	return (max - min);

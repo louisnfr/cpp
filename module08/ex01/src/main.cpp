@@ -6,7 +6,7 @@
 /*   By: lraffin <lraffin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 22:51:17 by lraffin           #+#    #+#             */
-/*   Updated: 2022/05/03 16:10:48 by lraffin          ###   ########.fr       */
+/*   Updated: 2022/05/03 16:17:38 by lraffin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 	/**************************************************/
 	std::cout << "** SUBJECT TEST **" << std::endl;
 	Span	sp = Span(5);
-	
+
 	sp.addNumber(6);
 	sp.addNumber(3);
 	sp.addNumber(17);
@@ -42,14 +42,14 @@ int	main(void)
 	try
 	{
 		sp2.addNumbers(11, 100);
-		sp2.print();
-		std::cout << sp2.shortestSpan() << std::endl;
-		std::cout << sp2.longestSpan() << std::endl;
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	sp2.print();
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
 	/**************************************************/
 	std::cout << std::endl << "** COPY TEST **" << std::endl;
 	Span	copy(sp2);
