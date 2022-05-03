@@ -1,5 +1,7 @@
 # cpp
 
+[![wakatime](https://wakatime.com/badge/user/7b6b66f5-8a9a-4187-ad50-0659cf472418/project/7696cf8f-52da-4965-a27c-c8e2e8af62f8.svg)](https://wakatime.com/badge/user/7b6b66f5-8a9a-4187-ad50-0659cf472418/project/7696cf8f-52da-4965-a27c-c8e2e8af62f8)
+
 42Paris, March 2022.
 
 Get started with Object Oriented Programming.
