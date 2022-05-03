@@ -1,6 +1,6 @@
 # cpp
 
-![wakatime](https://wakatime.com/badge/user/7b6b66f5-8a9a-4187-ad50-0659cf472418/project/7696cf8f-52da-4965-a27c-c8e2e8af62f8.svg)
+[![wakatime](https://wakatime.com/badge/user/7b6b66f5-8a9a-4187-ad50-0659cf472418/project/7696cf8f-52da-4965-a27c-c8e2e8af62f8.svg)](https://wakatime.com/@louisnfr)
 
 42Paris, March 2022.
 
